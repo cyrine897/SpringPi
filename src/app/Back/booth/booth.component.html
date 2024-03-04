@@ -1,0 +1,51 @@
+
+<div class="row">
+    <div class="col-md-12">
+        <button class="btn btn-round btn-sm btn-success" (click)="open(mymodal1)">Add new booth</button>
+        <br><br>
+        <ng-template #mymodal1 let-modal1>
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title">Add new booth</h4>
+                <button type="button" class="close" aria-label="Close" (click)="modal1.dismiss('Cross click')">
+                    <span aria-hidden="true" (click)="cancel()">×</span>
+                </button>
+            </div>
+            <div class="center">
+                <form>
+                    <div class="row" class="col-md-6">
+                        <input type="text" placeholder="description" [(ngModel)]="booth.description"
+                            [ngModelOptions]="{standalone : true}">
+                    </div>
+                    <br>
+                    <button type="button" class="btn btn-success" (click)="ajouterBoothEtAffecterAPack(idPack,booth)"
+                        (click)="modal1.close('Save click')">Add</button>
+                    <button type="button" class="btn btn-info" (click)="modal1.close('Save click')">Cancel</button>
+                </form>
+            </div>
+        </ng-template>
+        <div class="row">
+            <div class="card" class="text-center">
+                <table class="table">
+                    <thead style="background-color: rgb(192, 183, 183);">
+                        <th>etat</th>
+                        <th>description</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let b of listbooth'>
+                            <td>{{b.statusBooth}}</td>
+                            <td>{{b.description}}</td>
+                            
+                                
+                                <td>
+                                    <button type="button" class="btn btn-outline-danger"
+                                    (click)="deleteBooth(b.idBooth)">delete</button>
+                            
+                                </td>
+                               
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

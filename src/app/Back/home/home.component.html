@@ -1,3 +1,4 @@
+
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <!-- Navbar Brand-->
     <a class="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
@@ -96,7 +97,7 @@
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
-                <h1 class="mt-4">Dashboard</h1>
+                <h1 class="mt-4">Esprit Forum Dashboard</h1>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Dashboard</li>
                 </ol>
@@ -138,6 +139,12 @@
                         </div>
                     </div>
                 </div>
+                <div>
+                    <h1 class="mt-4">Gestion Pack</h1>
+                    <app-pack></app-pack>   
+                      
+                </div>
+                
                 <div class="row">
                     <div class="col-xl-6">
                         <div class="card mb-4">
@@ -164,28 +171,7 @@
                         DataTable Example
                     </div>
                     <div class="card-body">
-                        <table id="datatablesSimple">
-                            <thead>
-                                <tr>
-                                    <th>firstName</th>
-                                    <th>lastName</th>
-                                    <th>mail</th>
-                                    <th>birth_date</th>
-                                    <th>availability
-                                    </th>
-                                    <th>Salary</th>
-                                </tr>
-                            </thead>
-                            
-                            <tbody>
-                                <tr *ngFor="let participant of Participants">                                  <td>{{ participant.firstName }}</td>
-                                  <td>{{ participant.lastName }}</td>
-                                  <td>{{ participant.mail }}</td>
-                                  <td>{{ participant.birth_date }}</td>
-                                  <td>{{ participant.availability }}</td>
-                                </tr>
-                              </tbody>
-                        </table>
+                        
                     </div>
                 </div>
             </div>

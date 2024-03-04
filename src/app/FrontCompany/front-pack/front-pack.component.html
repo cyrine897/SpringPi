@@ -1,0 +1,21 @@
+<section id="services" class="services">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2>Packs</h2>
+      <p>Check our Packs</p>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100" *ngFor='let p of listPack'>
+        <div class="icon-box">
+          <div class="icon"><i class="bx bxl-dribbble" ></i></div>
+          <h4><a routerLink="/test" >{{p.typePack}}</a></h4>
+          <p >{{p.description}}</p>
+          <p style="font-size: large;"> price : {{p.price}}</p>
+          <p>salle : {{p.salle}}</p>
+          <p>----------------------------------------------------</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

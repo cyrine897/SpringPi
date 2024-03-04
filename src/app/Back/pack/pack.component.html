@@ -1,0 +1,114 @@
+
+<div class="row">
+    <div class="col-md-12">
+        <button class="btn btn-round btn-sm btn-success" (click)="open(mymodal1)">Add new Pack</button>
+        <br><br>
+        <ng-template #mymodal1 let-modal1>
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title">Add new Pack</h4>
+                <button type="button" class="close" aria-label="Close" (click)="modal1.dismiss('Cross click')">
+                    <span aria-hidden="true" (click)="cancel()">×</span>
+                </button>
+            </div>
+            <div class="center">
+                <form>
+                    <div class="row" class="col-md-6">
+                        <input type="text" placeholder="description" [(ngModel)]="pack.description"
+                            [ngModelOptions]="{standalone : true}">
+                    </div>
+                    <div class="row" class="col-md-6">
+                        <input type="text" placeholder="Type" [(ngModel)]="pack.typePack"
+                            [ngModelOptions]="{standalone : true}">
+                    </div>
+                    <div class="row" class="col-md-6">
+                        <input type="number" placeholder="Price" [(ngModel)]="pack.price"
+                            [ngModelOptions]="{standalone : true}">
+                    </div>
+                    <div class="row" class="col-md-6">
+                        <input type="text" placeholder="Salle" [(ngModel)]="pack.salle"
+                            [ngModelOptions]="{standalone : true}">
+                    </div>
+                    <br>
+                    <button type="button" class="btn btn-success" (click)="addPack(pack)"
+                        (click)="modal1.close('Save click')">Add</button>
+                    <button type="button" class="btn btn-info" (click)="modal1.close('Save click')">Cancel</button>
+                </form>
+            </div>
+        </ng-template>
+        <div class="row">
+            <div class="card" class="text-center">
+                <table class="table">
+                    <thead style="background-color: rgb(192, 183, 183);">
+                        <th>Description</th>
+                        <th>Type</th>
+                        <th>Price</th>
+                        <th>Salle</th>
+                        <th>Action</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let p of listPack'>
+                            <td>{{p.description}}</td>
+                            <td>{{p.typePack}}</td>
+                            <td>{{p.price}}</td>
+                            <td>{{p.salle}}</td>
+                            <td>
+                                <button type="button" class="btn btn-outline-primary" (click)="open(mymodal)">
+                                    edit
+                                </button>
+                                <ng-template #mymodal let-modal>
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="modal-basic-title">Edit</h4>
+                                        <button type="button" class="close" aria-label="Close"
+                                            (click)="modal.dismiss('Cross click')">
+                                            <span aria-hidden="true" (click)="cancel()">×</span>
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <form>
+                                            <div class="modal-body">
+                                                <div class="row" class="col-md-5">
+                                                    <label>Description</label>
+                                                    <input type="text" [(ngModel)]="p.description"
+                                                        [ngModelOptions]="{standalone : true}" />
+                                                </div>
+                                                <div class="row" class="col-md-5">
+                                                    <label>Type</label>
+                                                    <input type="text" [(ngModel)]="p.typePack"
+                                                        [ngModelOptions]="{standalone : true}" />
+                                                </div>
+                                                <div class="row" class="col-md-5">
+                                                    <label>Price</label>
+                                                    <input type="number" [(ngModel)]="p.price"
+                                                        [ngModelOptions]="{standalone : true}" />
+                                                </div>
+                                                <div class="row" class="col-md-5">
+                                                    <label>Salle</label>
+                                                    <input type="text" [(ngModel)]="p.salle"
+                                                        [ngModelOptions]="{standalone : true}" />
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-info"
+                                                    (click)="modal.close('Save click')" (click)="cancel()">Cancel
+                                                </button>
+                                                <button class="btn btn-success" (click)="editPack(p)"
+                                                    (click)="modal.close('Save click')">Validate</button>
+
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </ng-template>
+                                <button type="button" class="btn btn-outline-danger"
+                                    (click)="deletePack(p.idPack)">delete</button>
+                                    <button type="button" class="btn btn-outline-success"
+                                    (click)="showBooth(p.idPack)">show booths</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
