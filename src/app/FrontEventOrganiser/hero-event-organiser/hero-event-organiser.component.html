@@ -11,38 +11,41 @@
         </div>
       </div>
 
-      <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
-        <div class="col-xl-2 col-md-4">
-          <div class="icon-box">
-            <i class="ri-store-line"></i>
-            <h3><a href="">Lorem Ipsum</a></h3>
-          </div>
-        </div>
-        <div class="col-xl-2 col-md-4">
-          <div class="icon-box">
-            <i class="ri-bar-chart-box-line"></i>
-            <h3><a href="">Dolor Sitema</a></h3>
-          </div>
-        </div>
-        <div class="col-xl-2 col-md-4">
-          <div class="icon-box">
-            <i class="ri-calendar-todo-line"></i>
-            <h3><a href="">Sedare Perspiciatis</a></h3>
-          </div>
-        </div>
-        <div class="col-xl-2 col-md-4">
-          <div class="icon-box">
-            <i class="ri-paint-brush-line"></i>
-            <h3><a href="">Magni Dolores</a></h3>
-          </div>
-        </div>
-        <div class="col-xl-2 col-md-4">
-          <div class="icon-box">
-            <i class="ri-database-2-line"></i>
-            <h3><a href="">Nemos Enimade</a></h3>
-          </div>
+      <div id="layoutSidenav">
+        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+          <!-- ... Votre contenu de la barre latérale ici ... -->
+        </nav>
+        <div id="layoutSidenav_content">
+          <main>
+            <div class="table-container">
+              
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Quantité</th>
+                    <!-- ... autres en-têtes de colonnes ... -->
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                  <tr *ngFor="let callForTender of callForTenders">
+                    <td>{{ callForTender.name }}</td>
+                    <td>{{ callForTender.description }}</td>
+                    <td>{{ callForTender.quantity }}</td>
+                    <!-- ... autres cellules de données ... -->
+                    <td>
+                      <button class="btn btn-primary">Participer</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </main>
         </div>
       </div>
-
+                  
     </div>
   </section>

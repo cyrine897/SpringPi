@@ -17,6 +17,11 @@ import { HeaderEventOrganiserComponent } from './FrontEventOrganiser/header-even
 import { HeroParticipantComponent } from './FrontParticipant/hero-participant/hero-participant.component';
 import { HeaderParticipantComponent } from './FrontParticipant/header-participant/header-participant.component';
 import { ContactParticipantComponent } from './FrontParticipant/contact-participant/contact-participant.component';
+import { addappeloffrecomponent } from './Back/add-appeloffre/add-appeloffre.component';
+import { CallForTenderListComponent } from './Back/call-for-tender-list/call-for-tender-list.component';
+import { CallForTenderEditComponent } from './call-for-tender-edit/call-for-tender-edit.component';
+
+
 
 @NgModule({
   declarations: [
@@ -32,6 +37,10 @@ import { ContactParticipantComponent } from './FrontParticipant/contact-particip
     HeroParticipantComponent,
     HeaderParticipantComponent,
     ContactParticipantComponent,
+    addappeloffrecomponent,
+    CallForTenderListComponent,
+    HomeComponent,
+    CallForTenderEditComponent
 
   ],
   imports: [
