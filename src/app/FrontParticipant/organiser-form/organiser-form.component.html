@@ -1,0 +1,45 @@
+<app-header-participant></app-header-participant>
+
+<div style="padding-top: 100px; padding-left: 150px ;" class="col-lg-8 mt-5 mt-lg-0">
+  <form [formGroup]="userForm" (ngSubmit)="handleButtonClick()" class="php-email-form" action="forms/contact.php" method="post" role="form">
+    <div class="row">
+      
+    
+  
+    <div class="form-group mt-3">
+      <input type="email" class="form-control" formControlName="mail" name="mail" id="mail" placeholder="Your Email" required>
+    </div>
+    <div>
+      <input type="text" class="form-control" formControlName="userName" name="userName" id="userName" placeholder="Your Username" required>
+    </div>
+  
+    <div class="form-group mt-3">
+      <input type="text" class="form-control" formControlName="address" name="address" id="address" placeholder="Address" required>
+    </div>
+  
+    <div class="col-md-6 form-group">
+      <select id="typeTask" name="typeTask" formControlName="typeTask" class="form-control" required>
+        <option value="" disabled selected>Select an option</option>
+        <option *ngFor="let type of tasktype" [value]="type">{{ type }}</option>
+      </select>
+    </div>
+  
+    <div class="form-group mt-3">
+      <label>
+  
+      <div class="my-3">
+        <div class="loading">Loading</div>
+        <div class="error-message"></div>
+        <div class="sent-message">Your message has been sent. Thank you!</div>
+      </div>
+      <div class="col-md-6 form-group">
+        <!-- Your form fields go here -->
+    </div>
+    
+    <button  (click)="handleButtonClick()" type="button">Send Message</button>
+</label></div>  
+
+
+
+  
+<app-contact-participant></app-contact-participant>

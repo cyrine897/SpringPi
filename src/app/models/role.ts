@@ -1,0 +1,4 @@
+export enum Role {
+    EVENTORG,ADMIN,ORGENIZER,PARTICIPENT,COMPANY
+
+}

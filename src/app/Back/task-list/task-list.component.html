@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> gestion_participant
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <!-- Navbar Brand-->
     <a class="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
@@ -37,15 +33,6 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         Dashboard
                     </a>
-<<<<<<< HEAD
-                    <div class="sb-sidenav-menu-heading">Gestions</div>
-                    <a class="nav-link collapsed" routerLink="/gestionPack" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                        Gestion Pack
-                        <div class="sb-sidenav-collapse-arrow"></div>
-                    </a>
-                   
-=======
                     <div class="sb-sidenav-menu-heading">Interface</div>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                         <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
@@ -58,7 +45,6 @@
                             <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
                         </nav>
                     </div>
->>>>>>> gestion_participant
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                         <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                         Pages
@@ -110,15 +96,6 @@
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
-<<<<<<< HEAD
-                <h1 class="mt-4">Esprit Forum Dashboard</h1>
-                <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active">Dashboard</li>
-                </ol>
-                
-                
-                
-=======
                 <h1 class="mt-4">Dashboard</h1>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Dashboard</li>
@@ -161,63 +138,86 @@
                         </div>
                     </div>
                 </div>
->>>>>>> gestion_participant
                 <div class="row">
                     <div class="col-xl-6">
-                        <div class="card mb-4">
-                            <div class="card-header">
+                        <div class="card mb-4"   style="width: 1000px">
+                            <div class="card-header" >
                                 <i class="fas fa-chart-area me-1"></i>
                                 Area Chart Example
                             </div>
-                            <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6">
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-chart-bar me-1"></i>
-                                Bar Chart Example
+                            <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas>
+                                <div class="row">
+                                    <div class="col-xl-6">
+                                        <div class="card mb-4">
+                                            <div class="card-header">
+                                                <i class="fas fa-chart-area me-1"></i>
+                                                Area Chart Example
+                                            </div>
+                                            <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6">
+                                        <div class="card mb-4">
+                                            <div class="card-header">
+                                                <i class="fas fa-chart-bar me-1"></i>
+                                                Bar Chart Example
+                                            </div>
+                                            <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
+                                        </div>
+                                    </div>
+                                </div>
+                              
                             </div>
-                            <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
+                        </div>
+                        <div class="card mb-4"  style="width: 1000px">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                DataTable Example
+                            </div>
+                            <div class="card-body" style="margin-bottom: 50px;">
+                                <div>
+                                  <input placeholder="Search...">
+                                </div> 
+                                <div style="margin-left: 800px; margin-top: -10px;">      <button (click)="openCrudAdd()" class="btn btn-info"> + Add Task</button>
+                                </div>
+
+                              
+                                <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th>Name</th>
+                                      <th>Description</th>
+                                     
+                                      <th>TypeTask</th>
+                                      <th>Action</th>
+                                    </tr>
+                                  </thead>
+                              
+                                  <tbody>
+                                    <tr *ngFor="let task of listTask">
+                                      <td>{{ task.name }}</td>
+                                      <td>{{ task.description }}</td>
+                                      <td>{{ task.typeTask }}</td>
+                                      <td style="display: flex; ">
+
+                                        <div style=" margin-right: 10px;"><button  (click)="deleteTask(task.idTask)" class="btn btn-info">Delete</button></div>
+                                        <div><button (click)="openCrudModal(task)" class="btn btn-info">Update</button></div>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              
                         </div>
                     </div>
+                   
                 </div>
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <i class="fas fa-table me-1"></i>
-                        DataTable Example
-                    </div>
-                    <div class="card-body">
-<<<<<<< HEAD
-                        
-=======
-                        <table id="datatablesSimple">
-                            <thead>
-                                <tr>
-                                    <th>firstName</th>
-                                    <th>lastName</th>
-                                    <th>mail</th>
-                                    <th>birth_date</th>
-                                    <th>availability
-                                    </th>
-                                    <th>Salary</th>
-                                </tr>
-                            </thead>
-                            
-                            <tbody>
-                                <tr *ngFor="let participant of Participants">                                  <td>{{ participant.firstName }}</td>
-                                  <td>{{ participant.lastName }}</td>
-                                  <td>{{ participant.mail }}</td>
-                                  <td>{{ participant.birth_date }}</td>
-                                  <td>{{ participant.availability }}</td>
-                                </tr>
-                              </tbody>
-                        </table>
->>>>>>> gestion_participant
-                    </div>
-                </div>
+              
+                  
             </div>
+            
         </main>
+       
         <footer class="py-4 bg-light mt-auto">
             <div class="container-fluid px-4">
                 <div class="d-flex align-items-center justify-content-between small">
@@ -231,8 +231,8 @@
             </div>
         </footer>
     </div>
-<<<<<<< HEAD
 </div>
-=======
-</div>
->>>>>>> gestion_participant
+<!-- task-list.component.html -->
+
+<!-- task-modal.component.html -->
+
