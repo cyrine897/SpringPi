@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './Back/home/home.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactCompanyComponent } from './FrontCompany/contact-company/contact-company.component';
 import { HeaderCompanyComponent } from './FrontCompany/header-company/header-company.component';
 import { HeroCompanyComponent } from './FrontCompany/hero-company/hero-company.component';
@@ -17,6 +17,10 @@ import { HeaderEventOrganiserComponent } from './FrontEventOrganiser/header-even
 import { HeroParticipantComponent } from './FrontParticipant/hero-participant/hero-participant.component';
 import { HeaderParticipantComponent } from './FrontParticipant/header-participant/header-participant.component';
 import { ContactParticipantComponent } from './FrontParticipant/contact-participant/contact-participant.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -32,6 +36,8 @@ import { ContactParticipantComponent } from './FrontParticipant/contact-particip
     HeroParticipantComponent,
     HeaderParticipantComponent,
     ContactParticipantComponent,
+    LoginComponent,
+    RegisterComponent,
 
   ],
   imports: [
@@ -39,7 +45,10 @@ import { ContactParticipantComponent } from './FrontParticipant/contact-particip
     AppRoutingModule,
     RouterModule, 
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,71 @@
+.notification {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .error {
+    background-color: #ffcccc;
+    border-color: #ff6666;
+    color: #ff0000;
+  }
+  
+  .error-icon {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px; /* Ajustez la taille selon votre besoin */
+    height: 50px; /* Ajustez la taille selon votre besoin */
+    background-size: cover;
+  }
+  
+  .middle-error-icon {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px; /* Ajustez la taille selon votre besoin */
+    height: 50px; /* Ajustez la taille selon votre besoin */
+    background-size: cover;
+  }
+  .gradient-custom-3 {
+    /* fallback for old browsers */
+    background: #84fab0;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5))
+    }
+    .gradient-custom-4 {
+    /* fallback for old browsers */
+    background: #84fab0;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
+    }
+      /* Définir une largeur fixe pour le formulaire */
+      .card {
+        width: 100%;
+        max-width: 600px; /* Ajustez la largeur selon vos besoins */
+        margin: auto; /* Centrer le formulaire */
+    }
+    /* Ajouter un espace entre les champs */
+    .form-outline {
+        margin-bottom: 20px;
+    }
+    /* Afficher les champs deux par deux horizontalement */
+    .form-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .form-row .form-group {
+        flex-basis: calc(50% - 10px); /* 50% de largeur avec un espace de 10px entre les champs */
+    }

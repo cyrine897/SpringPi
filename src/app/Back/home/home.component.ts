@@ -35,4 +35,12 @@ export class HomeComponent  implements OnInit {
   ngOnInit() {
     this.getParticipants();
   }
+
+  logout() {
+    // Appelez la méthode de déconnexion de votre service d'authentification
+   // this.authService.logout();
+  
+    // Redirigez l'utilisateur vers la page de connexion
+    this.router.navigate(['/login']);
+  }
 }
