@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactCompanyComponent },
   {path:'test' , component:FormParticipantComponent},
   {path:'back',component:HomeComponent},
+  {path:'gestionPack',component:PackComponent},
   {path:'pack',component:FrontPackComponent},
   {path:'booth/:idPack',component:BoothComponent}
   // ...

@@ -84,7 +84,7 @@ export class BoothComponent {
       this.boothservice.editBooth(booth).subscribe();
     }
     deleteBooth(idBooth : any){
-      this.boothservice.deleteBooth(idBooth).subscribe(() => this.getAllBooths())
+      this.boothservice.deleteBooth(idBooth).subscribe(() => this.afficherListBoothWithPackId(this.idPack))
     }
     afficherListBoothWithPackId(idPack:any){
       this.boothservice.afficherListBoothWithPackId(idPack).subscribe( (res:Booth[])=>{

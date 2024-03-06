@@ -3,6 +3,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PackService } from 'src/app/Services/pack.service';
 import { Pack } from 'src/app/models/pack';
 
+
 @Component({
   selector: 'app-front-pack',
   templateUrl: './front-pack.component.html',
@@ -13,6 +14,7 @@ export class FrontPackComponent {
   pack:Pack;
   form:boolean;
   closeResult:string;
+  
   
   
   constructor(private packService:PackService,private modalService:NgbModal)

@@ -1,7 +1,19 @@
 
 <div class="row">
     <div class="col-md-12">
+        
+        
+            <div class="icon-box" class="col-md-6">
+              
+              <h5 ><a routerLink="/back" style="color: grey;">Back To Home</a></h5>
+              
+            </div>
+          
+        <h1 class="mt-4">Gestion Booths</h1>
+        <div class=" d-flex justify-content-end">
         <button class="btn btn-round btn-sm btn-success" (click)="open(mymodal1)">Add new booth</button>
+    
+    </div>
         <br><br>
         <ng-template #mymodal1 let-modal1>
             <div class="modal-header">
@@ -27,8 +39,9 @@
             <div class="card" class="text-center">
                 <table class="table">
                     <thead style="background-color: rgb(192, 183, 183);">
-                        <th>etat</th>
-                        <th>description</th>
+                        <th>Etat</th>
+                        <th>Description</th>
+                        <th>Action</th>
                     </thead>
                     <tbody>
                         <tr *ngFor='let b of listbooth'>
