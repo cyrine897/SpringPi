@@ -1,0 +1,45 @@
+<app-header-participant></app-header-participant>
+
+<section id="services" class="services">
+    <div class="container" data-aos="fade-up">
+        <div class="section-title d-flex justify-content-between">
+            <div>
+                <br><br><br><br>
+                <h2>Offers</h2>
+                <p>Check our Offers</p>
+            </div>
+           
+            <div class="search-bar">
+                <br><br><br><br><br>
+                <input type="text" [(ngModel)]="searchDomain" placeholder="Search by Domain" />
+                <button class="btn btn-dark" (click)="onSearch()">Search</button>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4" *ngFor="let offer of displayedOffers" data-aos="zoom-in" data-aos-delay="100">
+                <div class="icon-box fixed-size-container text-left" style="margin-bottom: 20px;">
+                    <p><strong style="font-size: 20px;">{{ offer.name }}</strong></p>  
+                    <!-- Ajustez la taille de la police selon vos besoins -->
+                    <p>Offer description : {{ offer.description }}</p>  
+                    <p>Offer limit Date : {{ offer.dateOffer }}</p>  
+                    <p>Offer Domain : {{ offer.domain }}</p>  
+                    <p>Offer Type : {{ offer.typeOffer }}</p>
+                    <button class="btn btn-danger">Interview Request</button>                       
+                </div>
+            </div>
+        </div>
+        
+        <!-- Ajouter des contrôles de pagination -->
+        <div class="pagination">
+            <button class="btn btn-primary" (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+            <span>{{ currentPage }}</span>
+            <button class="btn btn-primary" (click)="changePage(currentPage + 1)" [disabled]="(currentPage * itemsPerPage) >= listOffer.length">Next</button>
+        </div>
+    </div>
+</section>

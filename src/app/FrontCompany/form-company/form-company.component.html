@@ -1,0 +1,134 @@
+<app-header-company></app-header-company>
+
+<div style="margin: 100px;" class="row">
+  <div class="col-md-12">
+    <button class="btn btn-round btn-sm btn-danger" (click)="open(mymodal1)">Add new Offer</button>
+      <br><br>
+      <ng-template #mymodal1 let-modal1>
+          <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">Add new Offer</h4>
+              <button type="button" class="close" aria-label="Close" (click)="modal1.dismiss('Cross click')">
+                  <span aria-hidden="true" (click)="cancel()">×</span>
+              </button>
+          </div>
+          <div class="center">
+              <form>
+                  <div class="row" class="col-md-6">
+                      <input type="text" placeholder="name" [(ngModel)]="offer.name"
+                          [ngModelOptions]="{standalone : true}" >
+                  </div>
+                  <div class="row" class="col-md-6">
+                      <input type="text" placeholder="description" [(ngModel)]="offer.description"
+                          [ngModelOptions]="{standalone : true}">
+                  </div>
+                  <div class="row" class="col-md-6">
+                      <input type="text" placeholder="domain" [(ngModel)]="offer.domain"
+                          [ngModelOptions]="{standalone : true}">
+                  </div>
+                  <div class="row" class="col-md-6">
+                      <input type="datetime-local" placeholder="dateOffer" [(ngModel)]="offer.dateOffer"
+                          [ngModelOptions]="{standalone : true}">
+                  </div>
+                  <div class="row" class="col-md-6">
+                    <select [(ngModel)]="offer.typeOffer" [ngModelOptions]="{ standalone: true }">
+                        <option value="INTERSHIPPFA">INTERSHIPPFA</option>
+                        <option value="INTERSHIPPFE">INTERSHIPPFE</option>
+                        <option value="JOB">JOB</option>
+                    </select>
+                </div>
+                  <br>
+                  <button type="button" class="btn btn-success" (click)="addOffer(offer)"
+                      (click)="modal1.close('Save click')">Add</button>
+                  <button type="button" class="btn btn-info" (click)="modal1.close('Save click')">Cancel</button>
+              </form>
+          </div>
+      </ng-template>
+
+
+
+
+      
+      <div class="row">
+          <div class="card" class="text-center">
+              <table class="table">
+                  <thead style="background-color: rgb(192, 183, 183);">
+                      <th>name</th>
+                      <th>description</th>
+                      <th>dateOffer</th>
+                      <th>domain</th>
+                      <th>typeOffer</th>
+                      <th>Action</th>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor='let p of listOffer'>
+                          <td>{{p.name}}</td>
+                          <td>{{p.description}}</td>
+                          <td>{{p.dateOffer}}</td>
+                          <td>{{p.domain}}</td>
+                          <td>{{p.typeOffer}}</td>
+                          <td>
+                              <button type="button" class="btn btn-outline-primary" (click)="open(mymodal)">
+                                  edit
+                              </button>
+                              <ng-template #mymodal let-modal>
+                                  <div class="modal-header">
+                                      <h4 class="modal-title" id="modal-basic-title">Edit</h4>
+                                      <button type="button" class="close" aria-label="Close"
+                                          (click)="modal.dismiss('Cross click')">
+                                          <span aria-hidden="true" (click)="cancel()">×</span>
+                                      </button>
+                                  </div>
+                                  <div>
+                                      <form>
+                                          <div class="modal-body">
+                                              <div class="row" class="col-md-5">
+                                                  <label>Name</label>
+                                                  <input type="text" [(ngModel)]="p.name"
+                                                      [ngModelOptions]="{standalone : true}" />
+                                              </div>
+                                              <div class="row" class="col-md-5">
+                                                  <label>Description</label>
+                                                  <input type="text" [(ngModel)]="p.description"
+                                                      [ngModelOptions]="{standalone : true}" />
+                                              </div>
+                                              <div class="row" class="col-md-5">
+                                                  <label>DateOffer</label>
+                                                  <input type="datetime-local" [(ngModel)]="p.dateOffer"
+                                                      [ngModelOptions]="{standalone : true}" />
+                                              </div>
+                                              <div class="row" class="col-md-5">
+                                                  <label>Domain</label>
+                                                  <input type="text" [(ngModel)]="p.domain"
+                                                      [ngModelOptions]="{standalone : true}" />
+                                              </div>
+                                              <div class="row" class="col-md-5">
+                                                <label>typeOffer</label>
+                                                <input type="text" [(ngModel)]="p.typeOffer"
+                                                    [ngModelOptions]="{standalone : true}" />
+                                            </div>
+
+                                          </div>
+                                          <div class="modal-footer">
+                                              <button type="button" class="btn btn-info"
+                                                  (click)="modal.close('Save click')" (click)="cancel()">Cancel
+                                              </button>
+                                              <button class="btn btn-success" (click)="updateOffer(p)"
+                                                  (click)="modal.close('Save click')">Validate</button>
+
+
+                                          </div>
+                                      </form>
+                                  </div>
+                              </ng-template>
+                              <button type="button" class="btn btn-outline-danger"
+                                  (click)="removeOffer(p.idOffer)">delete</button>
+                                  
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</div>
+
