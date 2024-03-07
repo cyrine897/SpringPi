@@ -1,6 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 import { Participant } from '../models/participant';
+
+
+
+
+
 import { Observable } from 'rxjs';
 import { User } from '../models/user';
 
@@ -47,7 +53,6 @@ export class ServiceParticipantService {
     return this.http.delete<void>(`${this.baseUrl}/${id}`);
   }
 
-  
 
 
 }

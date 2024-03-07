@@ -1,31 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { ServiceParticipantService } from 'src/app/Services/service-participant.service';
-
+import { ServiceParticipantService } from 'src/app/Services/service-participant.service'
 import { ActivatedRoute, Router } from '@angular/router';
-import { Participant } from 'src/app/models/participant';
+import { ServiceEvenementService } from 'src/app/Services/service-evenement.service';
 import { HttpClient } from '@angular/common/http';
-
-
-
-
-import { response } from 'express';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  providers: [ServiceParticipantService]
+  providers: [ServiceEvenementService]
 })
-export class HomeComponent   {
 
+
+  export class HomeComponent  {
+  constructor(){}
+  }
   
- 
-  constructor(private activatedroute : ActivatedRoute) {}
-
+    
   
 
 
- 
-
-}
