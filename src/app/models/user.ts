@@ -1,4 +1,5 @@
-<<<<<<< HEAD
+import { Role } from "./role";
+import { Task } from "./task";
 export interface User {
     idUser : number;
     firstName :string;
@@ -6,17 +7,8 @@ export interface User {
     address: string;
     mail : string ;
 
-=======
-import { Role } from "./role";
-import { Task } from "./task";
-
-export interface User {
-    idUser : number;
-    userName :string;
-    address: string;
-    mail : string ;
     role : Role;
     task : Task[];
->>>>>>> gestion_participant
+
 
 }

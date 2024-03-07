@@ -26,10 +26,10 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-<<<<<<< HEAD
-=======
+
+
               "@angular/material/prebuilt-themes/indigo-pink.css",
->>>>>>> gestion_participant
+
               "src/styles.css"
             ],
             "scripts": []
@@ -92,10 +92,10 @@
               "src/assets"
             ],
             "styles": [
-<<<<<<< HEAD
-=======
+
+
               "@angular/material/prebuilt-themes/indigo-pink.css",
->>>>>>> gestion_participant
+
               "src/styles.css"
             ],
             "scripts": []
@@ -103,11 +103,11 @@
         }
       }
     }
-<<<<<<< HEAD
+
   },
   "cli": {
     "analytics": false
-=======
->>>>>>> gestion_participant
+
+
   }
 }
