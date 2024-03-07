@@ -7,6 +7,7 @@ import { HeroParticipantComponent } from './FrontParticipant/hero-participant/he
 
 import { FormParticipantComponent } from './FrontParticipant/form-participant/form-participant.component';
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 import { PackComponent } from './Back/pack/pack.component';
@@ -39,11 +40,23 @@ import { FormCompanyComponent } from './FrontCompany/form-company/form-company.c
 import { HeroCompanyComponent } from './FrontCompany/hero-company/hero-company.component';
 import { OfferParticipantComponent } from './FrontParticipant/offer-participant/offer-participant.component';
 >>>>>>> Gestion_offre
+=======
+
+import { addappeloffrecomponent } from './Back/add-appeloffre/add-appeloffre.component';
+import { HomeComponent } from './Back/home/home.component';
+import { CallForTenderListComponent } from './Back/call-for-tender-list/call-for-tender-list.component';
+import { CallForTenderEditComponent } from './call-for-tender-edit/call-for-tender-edit.component';
+import { ContactEventOrganiserComponent } from './FrontEventOrganiser/contact-event-organiser/contact-event-organiser.component';
+import { HeaderEventOrganiserComponent } from './FrontEventOrganiser/header-event-organiser/header-event-organiser.component';
+import { HeroEventOrganiserComponent } from './FrontEventOrganiser/hero-event-organiser/hero-event-organiser.component';
+
+>>>>>>> Gestion_COT
 const routes: Routes = [
   // ...
   { path: 'participant', component: ParticipantComponent },
   { path: 'contact', component: ContactCompanyComponent },
   {path:'test' , component:FormParticipantComponent},
+<<<<<<< HEAD
 <<<<<<< HEAD
 
   {path:'back',component:HomeComponent},
@@ -88,6 +101,14 @@ const routes: Routes = [
   
 
 >>>>>>> Gestion_offre
+=======
+  {path:'callfortender' , component:addappeloffrecomponent},
+  {path:'home' , component:HomeComponent},
+  {path:'listcall' , component:CallForTenderListComponent},
+  {path:'editcall' , component:CallForTenderEditComponent},
+  {path:'eventhome' , component:HeroEventOrganiserComponent}
+  
+>>>>>>> Gestion_COT
   // ...
 ];
 

@@ -32,6 +32,7 @@ import { HeaderEventOrganiserComponent } from './FrontEventOrganiser/header-even
 import { HeaderParticipantComponent } from './FrontParticipant/header-participant/header-participant.component';
 import { ContactParticipantComponent } from './FrontParticipant/contact-participant/contact-participant.component';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { TaskListComponent } from './Back/task-list/task-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
@@ -62,6 +63,16 @@ import { FormCompanyComponent } from './FrontCompany/form-company/form-company.c
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { OfferParticipantComponent } from './FrontParticipant/offer-participant/offer-participant.component';
 >>>>>>> Gestion_offre
+=======
+import { addappeloffrecomponent } from './Back/add-appeloffre/add-appeloffre.component';
+import { CallForTenderListComponent } from './Back/call-for-tender-list/call-for-tender-list.component';
+import { CallForTenderEditComponent } from './call-for-tender-edit/call-for-tender-edit.component';
+import { FormsModule } from '@angular/forms';
+import { SearchComponent } from './FrontEventOrganiser/search/search.component';
+
+
+
+>>>>>>> Gestion_COT
 
 @NgModule({
   declarations: [
@@ -80,6 +91,7 @@ import { OfferParticipantComponent } from './FrontParticipant/offer-participant/
     HeroParticipantComponent,
     HeaderParticipantComponent,
     ContactParticipantComponent,
+<<<<<<< HEAD
     FormCompanyComponent,
     OfferParticipantComponent,
 
@@ -108,12 +120,22 @@ import { OfferParticipantComponent } from './FrontParticipant/offer-participant/
  AssignmentListComponentComponent,
 FormParticipantComponent ],
 
+=======
+    addappeloffrecomponent,
+    CallForTenderListComponent,
+    HomeComponent,
+    CallForTenderEditComponent,
+    SearchComponent
+  
+  ],
+>>>>>>> Gestion_COT
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule, 
     HttpClientModule,
     ReactiveFormsModule,
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     NgbModule,
@@ -133,6 +155,8 @@ FormParticipantComponent ],
      ],
 =======
     NgbModule,
+=======
+>>>>>>> Gestion_COT
     FormsModule
   ],
 >>>>>>> Gestion_offre
