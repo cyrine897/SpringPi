@@ -20,6 +20,9 @@ import { ContactParticipantComponent } from './FrontParticipant/contact-particip
 import { addappeloffrecomponent } from './Back/add-appeloffre/add-appeloffre.component';
 import { CallForTenderListComponent } from './Back/call-for-tender-list/call-for-tender-list.component';
 import { CallForTenderEditComponent } from './call-for-tender-edit/call-for-tender-edit.component';
+import { FormsModule } from '@angular/forms';
+import { SearchComponent } from './FrontEventOrganiser/search/search.component';
+
 
 
 
@@ -40,15 +43,17 @@ import { CallForTenderEditComponent } from './call-for-tender-edit/call-for-tend
     addappeloffrecomponent,
     CallForTenderListComponent,
     HomeComponent,
-    CallForTenderEditComponent
-
+    CallForTenderEditComponent,
+    SearchComponent
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule, 
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

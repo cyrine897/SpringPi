@@ -2,7 +2,7 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { CallForTender } from '../models/callfortender';
 
 @Injectable({
@@ -35,5 +35,15 @@ export class CallForTenderService {
   deleteCallForTender(id: number): Observable<void> {
     return this.httpClient.delete<void>(`${this.baseUrl}/${id}`);
   }
+  search(query: string): Observable<any[]> {
+    // Implémentez ici votre logique de recherche
+    // Cela peut inclure une requête HTTP à un serveur, une recherche dans une liste locale, etc.
+
+    // Dans cet exemple, nous renvoyons simplement une liste de résultats factice
+    const results = ['Résultat 1', 'Résultat 2', 'Résultat 3'];
+    return of(results);
+  }
+
 }
+
 

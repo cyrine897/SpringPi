@@ -18,6 +18,7 @@ export class addappeloffrecomponent {
 
   private baseUrl = 'http://localhost:8089/pidev/callfortenders';
   ajouterCallForTenderForm: FormGroup=new FormGroup({});
+  showPopup: boolean = false;
 
   nouveauCallForTender: CallForTender = {
     idCOT: 0,
@@ -30,6 +31,7 @@ export class addappeloffrecomponent {
   };
   selectedFile: File | null = null ;
   pdfFileName: any;
+  
   constructor(
     private formBuilder: FormBuilder,
     private callForTenderService: CallForTenderService
@@ -65,6 +67,7 @@ export class addappeloffrecomponent {
             console.error("Erreur lors de l'ajout du CallForTender :", erreur);
           }
         );
+        this.showPopup = true;
     }
   }
 
@@ -74,5 +77,8 @@ export class addappeloffrecomponent {
   onFileSelected(event: any) {
     this.selectedFile = event.target.files[0];
   }
+  closePopup() {
+    // Fermer la fenêtre contextuelle
+    this.showPopup = false;
+  }
 }
-

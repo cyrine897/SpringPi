@@ -104,8 +104,16 @@
               <!-- Remplacez le contenu actuel du formulaire par ceci -->
               <h1 class="mt-4">Ajout d'un appel d'offre</h1>
 
+              <div id="popup" class="popup" [hidden]="!showPopup">
+                <div class="popup-content">
+                  <h3>Ajouté avec succès</h3>
+                  <p>L'appel d'offres a été ajouté avec succès.</p>
+                  <button class="btn btn-primary" (click)="closePopup()">Fermer</button>
+                </div>
+              </div>
+              
               <div style="padding-top: 100px; padding-left: 150px;" class="col-lg-8 mt-5 mt-lg-0">
-                <form [formGroup]="ajouterCallForTenderForm" (ngSubmit)="ajouterCallForTender()" class="php-email-form" action="forms/contact.php" method="post" role="form">
+                <form [formGroup]="ajouterCallForTenderForm" (ngSubmit)="ajouterCallForTender()" class="php-email-form" role="form">
                   <div class="row">
                     <div class="col-md-6 form-group">
                       <label for="name">Nom</label>
