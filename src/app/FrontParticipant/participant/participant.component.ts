@@ -14,11 +14,10 @@ export class ParticipantComponent implements OnInit {
   {
 
   }
-<<<<<<< HEAD
+
 
   
-=======
->>>>>>> gestion_participant
+
  
  
 }

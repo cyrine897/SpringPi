@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+<<<<<<< HEAD
+=======
+
+>>>>>>> 89b8f7a21599738bef3490f5b8d076cb49352e73
 import { Participant } from '../models/participant';
 
 

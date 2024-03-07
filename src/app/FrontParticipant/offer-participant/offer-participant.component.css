@@ -1,0 +1,9 @@
+.fixed-size-container {
+    width: 370px; /* Remplacez cette valeur par la taille souhaitée */
+    height: 300px; /* Remplacez cette valeur par la taille souhaitée */
+    margin: 0 auto; /* Pour centrer le conteneur horizontalement */
+}
+
+.text-left {
+    text-align: left;
+}

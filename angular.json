@@ -26,8 +26,17 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+<<<<<<< HEAD
 
               "@angular/material/prebuilt-themes/indigo-pink.css",
+=======
+<<<<<<< HEAD
+
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+
+=======
+>>>>>>> Gestion_offre
+>>>>>>> 89b8f7a21599738bef3490f5b8d076cb49352e73
               "src/styles.css"
             ],
             "scripts": []
@@ -101,6 +110,7 @@
       }
     }
 
+<<<<<<< HEAD
   },
   "cli": {
     "analytics": false
@@ -108,5 +118,11 @@
   },
   "cli": {
     "analytics": false
+=======
+  },
+  "cli": {
+    "analytics": false
+
+>>>>>>> 89b8f7a21599738bef3490f5b8d076cb49352e73
   }
 }

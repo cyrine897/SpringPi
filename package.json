@@ -12,7 +12,10 @@
   "dependencies": {
     "@angular/animations": "^15.2.0",
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 89b8f7a21599738bef3490f5b8d076cb49352e73
     "@angular/cdk": "^15.2.9",
 
     "@angular/common": "^15.2.0",
@@ -20,6 +23,10 @@
     "@angular/core": "^15.2.0",
     "@angular/forms": "^15.2.0",
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 89b8f7a21599738bef3490f5b8d076cb49352e73
     "@angular/material": "^15.2.9",
 
     "@angular/platform-browser": "^15.2.0",
@@ -35,8 +42,12 @@
 
     "ng2-search-filter": "^0.5.1",
 
+<<<<<<< HEAD
 
     "ngx-toastr": "^18.0.0",
+=======
+    "igniteui-webcomponents": "^4.7.0",
+>>>>>>> 89b8f7a21599738bef3490f5b8d076cb49352e73
 
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -56,7 +67,19 @@
     "karma-jasmine-html-reporter": "~2.0.0",
     "typescript": "~4.9.4"
   }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+>>>>>>> 89b8f7a21599738bef3490f5b8d076cb49352e73
 
 }
 
 
+<<<<<<< HEAD
+=======
+
+=======
+}
+>>>>>>> Gestion_offre
+>>>>>>> 89b8f7a21599738bef3490f5b8d076cb49352e73
