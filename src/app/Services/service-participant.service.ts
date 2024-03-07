@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-<<<<<<< HEAD
 import { Participant } from '../models/participant';
-=======
->>>>>>> gestion_participant
+
+
 import { Observable } from 'rxjs';
 import { User } from '../models/user';
 
@@ -11,7 +10,7 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class ServiceParticipantService {
-<<<<<<< HEAD
+
   private baseUrl = 'http://localhost:8089/pidev/participant'; // Remplacez cela par l'URL réelle de votre backend
  private InterfAdd = '/addParticipant';
  private InterfUpdate = '/addParticipant';
@@ -49,8 +48,6 @@ export class ServiceParticipantService {
   deleteParticipant(id: number): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/${id}`);
   }
-=======
-  
->>>>>>> gestion_participant
+
 
 }
