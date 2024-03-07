@@ -1,0 +1,129 @@
+<app-home></app-home>
+<div class="row">
+  <div class="col-md-12">
+      <button class="btn btn-round btn-sm btn-success" (click)="open(mymodal1)">Add new Event</button>
+<br>
+<br>
+<a routerLink="/back" >Go Back</a>
+      <br><br>
+      <ng-template #mymodal1 let-modal1>
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Add new Event</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal1.dismiss('Cross click')">
+                <span aria-hidden="true" (click)="cancel()">×</span>
+            </button>
+        </div>
+        
+        <div class="center">
+            <form>
+                <div class="row" class="col-md-6">
+                    <input type="number" placeholder="id" [(ngModel)]="event.idEvenement"
+                        [ngModelOptions]="{standalone : true}">
+                </div>
+                <div class="row" class="col-md-6">
+                    <input type="text" placeholder="Name" [(ngModel)]="event.nom"
+                        [ngModelOptions]="{standalone : true}">
+                </div>
+                <div class="row" class="col-md-6">
+                    <input type="date" placeholder="Date" [(ngModel)]="event.dateEvenement"
+                        [ngModelOptions]="{standalone : true}">
+                </div>
+                <div class="row" class="col-md-6">
+                    <input type="text" placeholder="Description" [(ngModel)]="event.description"
+                        [ngModelOptions]="{standalone : true}">
+                </div>
+                <br>
+                
+                <button type="button" class="btn btn-success" (click)="addEvenement(event)"
+                    (click)="modal1.close('Save click')">Add</button>
+                <button type="button" class="btn btn-info" (click)="modal1.close('Save click')">Cancel</button>
+               
+            </form>
+        </div>
+        
+    </ng-template>
+      <div class="row">
+          <div class="card" class="text-center">
+              <table class="table">
+                  <thead style="background-color: rgb(192, 183, 183);">
+                      <th>Event</th>
+                      <th>Name</th>
+                      <th>Date</th>
+                      <th>Description</th>
+                      <th>Action</th>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor='let p of evenement'>
+                        <td>{{p.idEvenement}}</td>
+                        <td>{{p.nom}}</td>
+                        <td>{{p.dateEvenement}}</td>
+                        <td>{{p.description}}</td>  
+                        <td>
+                              <button type="button" class="btn btn-outline-primary" (click)="open(mymodal)">
+                                  edit
+                              </button>
+                              <ng-template #mymodal let-modal>
+                                  <div class="modal-header">
+                                      <h4 class="modal-title" id="modal-basic-title">Edit</h4>
+                                      <button type="button" class="close" aria-label="Close"
+                                          (click)="modal.dismiss('Cross click')">
+                                          <span aria-hidden="true" (click)="cancel()">×</span>
+                                      </button>
+                                  </div>
+                                  <div>
+                                      <form>
+                                          <div class="modal-body">
+
+                                            
+
+                                            <div class="row" class="col-md-5">
+                                                <label>ID</label>
+                                                <input type="number" [(ngModel)]="p.idEvenement"
+                                                    [ngModelOptions]="{standalone : true}" />
+                                            </div>
+
+                                            <div class="row" class="col-md-5">
+                                                <label>Name</label>
+                                                <input type="text" [(ngModel)]="p.nom"
+                                                    [ngModelOptions]="{standalone : true}" />
+                                            </div>
+
+                                            <div class="row" class="col-md-5">
+                                                <label>Date</label>
+                                                <input type="date" [(ngModel)]="p.dateEvenement"
+                                                    [ngModelOptions]="{standalone : true}" />
+                                            </div>
+                                            <div class="row" class="col-md-5">
+                                                <label>Description</label>
+                                                <input type="text" [(ngModel)]="p.description"
+                                                    [ngModelOptions]="{standalone : true}" />
+                                            </div>
+                                              
+                                            
+                                              
+                                          </div>
+                                          <div class="modal-footer">
+                                              <button type="button" class="btn btn-info"
+                                                  (click)="modal.close('Save click')" (click)="cancel()">Cancel
+                                              </button>
+                                              <button class="btn btn-success" (click)="UpdateEvenement(p)"
+                                                  (click)="modal.close('Save click')">Validate</button>
+
+
+                                          </div>
+                                      </form>
+                                  </div>
+                              </ng-template>
+                              <button type="button" class="btn btn-outline-danger"
+                                  (click)="deleteEvenement(p.idEvenement)">delete</button>
+                                  
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+              
+          </div>
+      </div>
+  </div>
+</div>
+
