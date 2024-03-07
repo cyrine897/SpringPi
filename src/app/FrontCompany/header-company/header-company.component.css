@@ -1,0 +1,8 @@
+#header {
+    background-color: #808080; 
+  }
+
+.nav-item.active a {
+    color: red;
+  }
+  

@@ -6,6 +6,7 @@ import { ParticipantComponent } from './FrontParticipant/participant/participant
 import { HeroParticipantComponent } from './FrontParticipant/hero-participant/hero-participant.component';
 
 import { FormParticipantComponent } from './FrontParticipant/form-participant/form-participant.component';
+<<<<<<< HEAD
 
 
 import { PackComponent } from './Back/pack/pack.component';
@@ -31,11 +32,19 @@ import { combineLatest } from 'rxjs';
 import { InterfOrganiserComponent } from './FrontParticipant/interf-organiser/interf-organiser.component';
 import { AssignmentListComponentComponent } from './Back/assignment-list-component/assignment-list-component.component';
 
+=======
+import { HeaderCompanyComponent } from './FrontCompany/header-company/header-company.component';
+import { HeaderParticipantComponent } from './FrontParticipant/header-participant/header-participant.component';
+import { FormCompanyComponent } from './FrontCompany/form-company/form-company.component';
+import { HeroCompanyComponent } from './FrontCompany/hero-company/hero-company.component';
+import { OfferParticipantComponent } from './FrontParticipant/offer-participant/offer-participant.component';
+>>>>>>> Gestion_offre
 const routes: Routes = [
   // ...
   { path: 'participant', component: ParticipantComponent },
   { path: 'contact', component: ContactCompanyComponent },
   {path:'test' , component:FormParticipantComponent},
+<<<<<<< HEAD
 
   {path:'back',component:HomeComponent},
   {path:'gestionPack',component:PackComponent},
@@ -69,6 +78,16 @@ const routes: Routes = [
 
 
 
+=======
+  {path:'test2' , component:HeaderCompanyComponent},
+  {path:'homecompany' , component:HeroCompanyComponent},
+  {path:'homeparticipant' , component:HeroParticipantComponent},
+  {path:'crudoffer' , component:FormCompanyComponent},
+  {path:'headerC' , component:HeaderParticipantComponent},
+  {path:'listoffer' , component:OfferParticipantComponent}
+  
+
+>>>>>>> Gestion_offre
   // ...
 ];
 

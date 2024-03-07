@@ -26,9 +26,12 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+<<<<<<< HEAD
 
               "@angular/material/prebuilt-themes/indigo-pink.css",
 
+=======
+>>>>>>> Gestion_offre
               "src/styles.css"
             ],
             "scripts": []

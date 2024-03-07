@@ -31,6 +31,7 @@ import { HeroEventOrganiserComponent } from './FrontEventOrganiser/hero-event-or
 import { HeaderEventOrganiserComponent } from './FrontEventOrganiser/header-event-organiser/header-event-organiser.component';
 import { HeaderParticipantComponent } from './FrontParticipant/header-participant/header-participant.component';
 import { ContactParticipantComponent } from './FrontParticipant/contact-participant/contact-participant.component';
+<<<<<<< HEAD
 import { TaskListComponent } from './Back/task-list/task-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
@@ -56,6 +57,11 @@ import { AssignmentListComponentComponent } from './Back/assignment-list-compone
 
   
 
+=======
+import { FormCompanyComponent } from './FrontCompany/form-company/form-company.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { OfferParticipantComponent } from './FrontParticipant/offer-participant/offer-participant.component';
+>>>>>>> Gestion_offre
 
 @NgModule({
   declarations: [
@@ -74,6 +80,8 @@ import { AssignmentListComponentComponent } from './Back/assignment-list-compone
     HeroParticipantComponent,
     HeaderParticipantComponent,
     ContactParticipantComponent,
+    FormCompanyComponent,
+    OfferParticipantComponent,
 
     PackComponent,
     FrontPackComponent,
@@ -106,6 +114,7 @@ FormParticipantComponent ],
     RouterModule, 
     HttpClientModule,
     ReactiveFormsModule,
+<<<<<<< HEAD
 
     NgbModule,
     FormsModule,
@@ -122,6 +131,11 @@ FormParticipantComponent ],
     FormsModule,
     NgbModule,
      ],
+=======
+    NgbModule,
+    FormsModule
+  ],
+>>>>>>> Gestion_offre
   providers: [],
   bootstrap: [AppComponent]
 })
