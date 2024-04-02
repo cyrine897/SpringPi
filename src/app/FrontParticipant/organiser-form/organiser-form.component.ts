@@ -30,8 +30,11 @@ export class OrganiserFormComponent {
     file: null,
     email: '',
     typeTask: null,
-    filename : '',
-    contentType:''
+    filename: '',
+    contentType: '',
+    invoiceNo: '',
+    idParticipantRequest: 0,
+    status: ''
   };
   userForm: FormGroup;
   userName : string;
@@ -102,8 +105,14 @@ export class OrganiserFormComponent {
         typeTask: this.userForm.get('typeTask').value,
         file: this.selectedFile // Utilisez this.selectedFile pour le champ de fichier
         ,
+
+
+
         contentType: '',
-        filename: ''
+        filename: '',
+        invoiceNo: '',
+        idParticipantRequest: 0,
+        status: ''
       };
   
       this.ParticipantRequestService.addOrganiserToTask(participantRequest)

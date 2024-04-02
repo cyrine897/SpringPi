@@ -16,7 +16,6 @@ const routes: Routes = [
   { path: 'contact', component: ContactCompanyComponent },
   {path:'back' , component:HomeComponent},
   {path : 'event' , component:ContactEventOrganiserComponent},
-  {path : 'task' , component:TaskListComponent},
   {path: 'crud' , component:TaskComponent},
   {path: 'organiser' , component:OrganiserComponent},
   {path: 'OrganiserForum/:typeTask' , component:OrganiserFormComponent},

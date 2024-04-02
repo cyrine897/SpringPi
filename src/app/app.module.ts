@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { HomeComponent } from './Back/home/home.component';
 import { RouterModule } from '@angular/router';
-
+import { NgxPaginationModule } from 'ngx-pagination';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactCompanyComponent } from './FrontCompany/contact-company/contact-company.component';
@@ -25,16 +27,20 @@ import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/materia
 import { TaskModalComponent } from './Back/task-modal/task-modal.component';
 import { TaskComponent } from './Back/task/task.component';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { TemplateRef } from '@angular/core';
 import { OrganiserComponent } from './FrontParticipant/organiser/organiser.component';
 import { OrganiserFormComponent } from './FrontParticipant/organiser-form/organiser-form.component';
 import { Ng2SearchPipe, Ng2SearchPipeModule } from 'ng2-search-filter';
 import { InterfOrganiserComponent } from './FrontParticipant/interf-organiser/interf-organiser.component';
 import { SearchComponent } from './Back/search/search.component';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer'
-
 import { AssignmentListComponentComponent } from './Back/assignment-list-component/assignment-list-component.component';
 import { ConfirmationComponent } from './FrontParticipant/confirmation/confirmation.component';
 import { ConfirmationDialogComponent } from './FrontParticipant/confirmation-dialog/confirmation-dialog.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   @NgModule({
   declarations: [
     AppComponent,
@@ -74,6 +80,11 @@ import { ConfirmationDialogComponent } from './FrontParticipant/confirmation-dia
     MatIconModule,
     MatDialogModule,
     NgxExtendedPdfViewerModule,
+    NgbModule,
+    NgxPaginationModule,
+    MatPaginatorModule,
+  MatSortModule,
+  MatTableModule,
   
   ],
   providers: [],

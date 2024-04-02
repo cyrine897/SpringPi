@@ -1,4 +1,4 @@
-import { HttpClient, HttpEventType } from '@angular/common/http';
+import { HttpClient, HttpEventType, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ParticipantRequest } from '../models/participantRequest';
 import { Observable, map } from 'rxjs';
@@ -41,12 +41,38 @@ export class ParticipantRequestService {
     return null;
   } 
    
-  GenerateInvoicePDF(invoiceno:any){
-    return this.http.get('https://localhost:8089/pidev/Invoice/generatepdf?InvoiceNo='+invoiceno,{observe:'response',responseType:'blob'});
-    
-  }
  
-  
+  GenerateInvoicePDF(invoiceNo: string, filename: string, contentType: string, userName: string, email: string, typeTask: TypeTask  ): Observable<HttpResponse<Blob>> {
+    const url = `http://localhost:8089/pidev/participantRequest/generatepdf?invoiceNo=${invoiceNo}&filename=${filename}&contentType=${contentType}&userName=${userName}&email=${email}&typeTask=${typeTask}`;
+    return this.http.get(url, {
+      observe: 'response',
+      responseType: 'blob'
+    });
+  }
+  getFiles(): Observable<any> {
+    return this.http.get<File[]>(this.Url + '/files');
+  }
 
+
+  downloadFile(idParticipantRequest: number): Observable<HttpResponse<Blob>> {
+    return this.http.get(this.Url + `/download/${idParticipantRequest}`, {
+      responseType: 'blob',
+      observe: 'response',
+    });
+  }
+  
+  updateParticipantStatus(idParticipantRequest: number, status: string): void {
+    this.http.put<any>(`http://localhost:8089/pidev/participantRequest/${idParticipantRequest}/status`, { status })
+      .subscribe(() => {
+        console.log(`Statut mis à jour avec succès: ${status}`);
+      }, error => {
+        console.error('Erreur lors de la mise à jour du statut du participant : ', error);
+      });
+  }
+  
+  getData(pageNumber: number, pageSize: number): Observable<any> {
+    const apiUrl = `http://localhost:8089/pidev/participantRequest?page=${pageNumber}&size=${pageSize}`;
+    return this.http.get(apiUrl);
+  }
  
 }

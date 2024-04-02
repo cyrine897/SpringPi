@@ -107,6 +107,9 @@
                             <div class="card-footer d-flex align-items-center justify-content-between">
                                 <a class="small text-white stretched-link" href="#">View Details</a>
                                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div> <div class="charts">
+                                <div class="pie" [chart]="pieChart"></div>
+                                <div class="line" [chart]="lineChart"></div>
                             </div>
                         </div>
                     </div>
@@ -138,57 +141,69 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xl-6">
-                        <div class="card mb-4"   style="width: 1000px">
-                            <div class="card-header" >
-                                <i class="fas fa-chart-area me-1"></i>
-                                List of Futur Organisers 
-                            </div>
-                            <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas>
-                                <div class="row">
-                                    <div class="col-xl-6">
-                                        <div class="card mb-4" style="width: 900px;">
-                                           <!-- assignment-list-component.component.html -->
-<tr *ngFor="let list of listParticipantRequest">
-    <td>
-      <!-- User Details -->
-      <ul>
-        <li><strong>UserName:</strong> {{list.userName}}</li>
 
-        <li><strong>Email:</strong> {{ list.email}}</li>
-        <!-- ... Ajoutez d'autres détails utilisateur ici ... -->
-      </ul>
-    </td>
-    <td>
-      <!-- Task Details -->
-      <ul>
-        <li><strong>File:</strong> {{ list.file }}</li>
-        <li><strong>TypeTask:</strong> {{list.typeTask }}</li>
-        <li><strong>TypeTask:</strong> {{list.filename }}</li>
-        <li><strong>TypeTask:</strong> {{list.contentType }}</li>
-        <!-- ... Ajoutez d'autres détails de la tâche ici ... -->
-      </ul>
-    </td>
-    <td>
-      <!-- Actions -->
-      <button >Accepter</button>
-      <button >Refuser</button>
-    </td>
-  </tr>
-                                            <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
-                                        </div>
-                                    </div>
-                                  
-                                </div>
-                              
+                <div class="row" >
+                    <div class="col-xl-6">
+                        <div class="card mb-4" style="width: 1200px">
+                            <div class="card-header">
+                                <i class="fas fa-chart-area me-1"></i>
+                                List of Futur Organisers
                             </div>
-                        </div>
-                    
+                            <div class="mat-elevation-z8"></div>
+                            <div class="card-body">
+                                <!-- Add MatPaginator component -->
+                                <app-search (searchTextChanged)=" onSearchTextChanged($event)"></app-search>
+                                <pagination-controls style="width: 800px;margin-left: 1500px;" (pageChange)="p = $event"></pagination-controls>
+
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>UserName</th>
+                                            <th>Email</th>
+
+                                            <th>File</th>
+                                            <th>Filename</th>
+                                            <th>TypeTask</th>
+                                            <th>ContentType</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Utilisez MatTableDataSource pour la liaison de données -->
+                                        <tr   *ngFor="let list of listParticipantRequest | paginate: { itemsPerPage: 10, currentPage: p }">
+                                            <!-- User Details -->
+                                            
+                                            <!-- File -->
+                                          
+                                            <td>{{list.userName}}</td>
+                                            <td>{{list.email}}</td>
+                                            <td *ngIf="searchText === '' || list.userName.toLowerCase().includes(searchText)">
+                                                <img style="width: 60px;" src="assets/img/cv.png">
+                                                <button class="btn btn-primary" (click)="downloadFile(list.idParticipantRequest)">Download</button>
+                                            </td>
+                                            <!-- Filename -->
+                                            <td>{{ list.filename }}</td>
+                                            <!-- TypeTask -->
+                                            <td>{{ list.typeTask }}</td>
+                                            <!-- ContentType -->
+                                            <td>{{ list.contentType }}</td>
+                                            <!-- Actions -->
+                                            <td *ngIf="searchText === '' || list.userName.toLowerCase().includes(searchText)">
+                                                <button class="btn btn-success" (click)="acceptAction(list.idParticipantRequest)" >Accepter</button>
+                                                <button class="btn btn-danger" (click)="refuseAction(list.idParticipantRequest)" >Refuser</button>
+                                                <button style="margin-top: 20px;" class="btn btn-danger" (click)="DownloadInvoice(list.invoiceNo, list.filename, list.contentType, list.userName, list.email, list.typeTask )">Download</button>
+                                                <button style="margin-top: 20px;" class="btn btn-success" (click)="PrintInvoice(list.invoiceNo, list.filename, list.contentType, list.userName, list.email, list.typeTask  )">Print</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                              </div>
                               
                         </div>
                     </div>
-                   
+                </div> 
+                
                 </div>
               
                   </main>
