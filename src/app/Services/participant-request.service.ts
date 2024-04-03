@@ -54,6 +54,12 @@ export class ParticipantRequestService {
   }
 
 
+  getParticipantRequestStatisticsByTypeTask(): Observable<Map<TypeTask, number>> {
+    return this.http.get<Map<TypeTask, number>>(this.Url+ `/stats`);
+  }
+  getStatsByTypeTask(): Observable<any> {
+    return this.http.get(`${this.Url}/stats`);
+  }
   downloadFile(idParticipantRequest: number): Observable<HttpResponse<Blob>> {
     return this.http.get(this.Url + `/download/${idParticipantRequest}`, {
       responseType: 'blob',

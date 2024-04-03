@@ -11,12 +11,12 @@ import { OrganiserFormComponent } from './FrontParticipant/organiser-form/organi
 import { combineLatest } from 'rxjs';
 import { InterfOrganiserComponent } from './FrontParticipant/interf-organiser/interf-organiser.component';
 import { AssignmentListComponentComponent } from './Back/assignment-list-component/assignment-list-component.component';
+import { StatisticsComponent } from './Back/statistics/statistics.component';
 const routes: Routes = [
   // ...
   { path: 'contact', component: ContactCompanyComponent },
   {path:'back' , component:HomeComponent},
-  {path : 'event' , component:ContactEventOrganiserComponent},
-  {path: 'crud' , component:TaskComponent},
+  {path : 'statistics' , component:StatisticsComponent},
   {path: 'organiser' , component:OrganiserComponent},
   {path: 'OrganiserForum/:typeTask' , component:OrganiserFormComponent},
 

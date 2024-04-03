@@ -5,7 +5,6 @@ import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer'
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator'; // Import MatPaginator
-
 import { ParticipantRequestService } from 'src/app/Services/participant-request.service';
 import { TaskService } from 'src/app/Services/task.service';
 import { UserService } from 'src/app/Services/user.service';
@@ -34,47 +33,9 @@ export class AssignmentListComponentComponent {
   userForm: FormGroup; // Assurez-vous que cette propriété est correctement initialisée
   users: any[]; // Déclarez le tableau users avec le type approprié
   files: any = [];
-lineChart=new Chart({
-  chart: {
-    type: 'line'
-  },
-  title: {
-    text: 'Linechart'
-  },
-  credits: {
-    enabled: false
-  },
-  series: [
-    {
-      name: 'Line 1',
-      data: [10, 2, 3,6,9,10,20 , 10 , 9 , 5 , 1]
-    } as any
-  ]
-})
-pieChart = new Chart({
-
-  chart: {
-    type: 'line'
-  },
-  title: {
-    text: 'Linechart'
-  },
-  credits: {
-    enabled: false
-  },
-  series: [
-    {
-     type: 'pie',
-     data:[
-      {name: 'COVID19' , y:1, color:'#eeeee'},
-      {name: 'EBOLA' , y:2, color:'#eeeee'},
-      {name: 'DISPORA' , y:3, color:'#0688959'},
-      {name: 'DIABETES' , y:4, color:'#eeeee'},
-
-     ]
-    }
-  ]
-})
+  lineChart: Chart;
+  pieChart: Chart;
+  statsData: any;
   constructor(private formBuilder: FormBuilder,private sanitizer: DomSanitizer, private taskService: TaskService , private participantRequestService: ParticipantRequestService) {
     
 
@@ -103,16 +64,56 @@ pieChart = new Chart({
 
 ngOnInit(): void {
   this.getParticipantRequests();
- 
- 
+  this.getStats();
 
+  this.lineChart = new Chart({
+    chart: {
+      type: 'line'
+    },
+    title: {
+      text: 'Linechart'
+    },
+    credits: {
+      enabled: false
+    },
+    series: [
+      
+    ]
+  });
+
+  this.pieChart = new Chart({
+    chart: {
+      type: 'pie'
+    },
+    title: {
+      text: 'Piechart'
+    },
+    credits: {
+      enabled: false
+    },
+    series: [
+      {
+        type: 'pie',
+        data: [
+          { name: 'COVID19', y: 1, color: '#eeeee' },
+          { name: 'EBOLA', y: 2, color: '#eeeee' },
+          { name: 'DISPORA', y: 3, color: '#0688959' },
+          { name: 'DIABETES', y: 4, color: '#eeeee' },
+        ]
+      }
+    ]
+  });
 }
 
+getStats(): void {
+  this.participantRequestService.getStatsByTypeTask()
+    .subscribe(data => {
+      this.statsData = data;
+    });
+}
 
 // add point to chart serie
-add() {
-  this.chart.addPoint(Math.floor(Math.random() * 10));
-}
+
 getParticipantRequests(): void {
   this.participantRequestService.getAllParticipantRequests().subscribe(
     (res: ParticipantRequest[]) => {

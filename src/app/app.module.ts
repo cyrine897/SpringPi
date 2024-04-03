@@ -41,6 +41,8 @@ import { AssignmentListComponentComponent } from './Back/assignment-list-compone
 import { ConfirmationComponent } from './FrontParticipant/confirmation/confirmation.component';
 import { ConfirmationDialogComponent } from './FrontParticipant/confirmation-dialog/confirmation-dialog.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { StatisticsComponent } from './Back/statistics/statistics.component';
+
   @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +64,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
  InterfOrganiserComponent,
  AssignmentListComponentComponent,
  ConfirmationComponent,
- ConfirmationDialogComponent  ],
+ ConfirmationDialogComponent,
+ StatisticsComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -85,7 +88,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatPaginatorModule,
   MatSortModule,
   MatTableModule,
-  
   ],
   providers: [],
   bootstrap: [AppComponent]
