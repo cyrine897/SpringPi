@@ -17,6 +17,12 @@ import { HeaderEventOrganiserComponent } from './FrontEventOrganiser/header-even
 import { HeroParticipantComponent } from './FrontParticipant/hero-participant/hero-participant.component';
 import { HeaderParticipantComponent } from './FrontParticipant/header-participant/header-participant.component';
 import { ContactParticipantComponent } from './FrontParticipant/contact-participant/contact-participant.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
+import { RegisterComponent } from './register/register.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { ResetPasswordSmsComponent } from './reset-password-sms/reset-password-sms.component';
+import { ChangepasswfSmsComponent } from './changepasswf-sms/changepasswf-sms.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +38,15 @@ import { ContactParticipantComponent } from './FrontParticipant/contact-particip
     HeroParticipantComponent,
     HeaderParticipantComponent,
     ContactParticipantComponent,
+    LoginComponent,
+    RegisterComponent,
+    HomeComponent,
+    ResetPasswordComponent,
+    ResetPasswordSmsComponent,
+    ChangepasswfSmsComponent,
+   
+    
+    
 
   ],
   imports: [
@@ -39,7 +54,9 @@ import { ContactParticipantComponent } from './FrontParticipant/contact-particip
     AppRoutingModule,
     RouterModule, 
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
