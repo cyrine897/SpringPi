@@ -1,0 +1,122 @@
+.salle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  background-color: lightgrey;
+  position: relative;
+}
+
+.door {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 100px;
+  background-color: rgba(255, 0, 0, 0.5);
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.door::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 10px;
+  height: 60px;
+  background-color: #ff5165;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.door::after {
+  content: "";
+  position: absolute;
+  top: 35px;
+  left: 30px;
+  width: 20px;
+  height: 30px;
+  background-color: #f5f5f5; /* light gray */
+  border-radius: 50%;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px; /* Espacement entre les lignes */
+}
+
+.booth {
+  width: 100px; /* Adjust the width as needed */
+  height: 60px; /* Adjust the height as needed */
+  margin-right: 10px; /* Espacement entre les booths */
+  background-color: rgb(226, 215, 215); /* Couleur de base pour une booth */
+  border: 1px solid #000; /* Bordure de la booth */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5); /* Ombre pour simuler la profondeur */
+}
+
+
+.reserved {
+  background-color: rgba(255, 0, 0, 0.8); /* Couleur rouge pour les booths réservées */
+}
+
+.in-progress {
+  background-color: rgba(255, 255, 0, 0.8); /* Couleur jaune pour les booths en cours */
+}
+
+.available {
+  background-color: rgba(0, 128, 0, 0.8); /* Couleur verte pour les booths disponibles */
+}
+
+.other {
+  background-color: grey;
+}
+
+.booth-key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.key-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.key-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.key-text {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.reserved .key-color {
+  background-color: rgba(255, 0, 0, 0.8);
+}
+
+.in-progress .key-color {
+  background-color: rgba(255, 255, 0, 0.8);
+}
+
+.available .key-color {
+  background-color: rgba(0, 128, 0, 0.8);
+}

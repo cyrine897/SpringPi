@@ -1,131 +1,277 @@
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+  <!-- Navbar Brand-->
+  <a class="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
+  <!-- Sidebar Toggle-->
+  <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+  <!-- Navbar Search-->
+  <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+    <div class="input-group">
+      <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+      <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+    </div>
+  </form>
+  <!-- Navbar-->
+  <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+        <li><a class="dropdown-item" href="#!">Settings</a></li>
+        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+        <li><hr class="dropdown-divider" /></li>
 
-<div class="row">
- 
-    <div class="col-md-12 ">
-        
-            <div class="icon-box">
-              
-              <h5 ><a routerLink="/back" style="color: rgb(107, 102, 102);">Back To home</a></h5>
-              
-            </div>
-          
-        <h1 class="mt-4">Gestion Pack</h1>
-        <div class=" d-flex justify-content-end">
-           
-            <button class="btn btn-round btn-sm btn-success " (click)="open(mymodal1)" >Add new Pack</button>
+
+      </ul>
+    </li>
+  </ul>
+</nav>
+<div id="layoutSidenav">
+  <div id="layoutSidenav_nav">
+    <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+      <div class="sb-sidenav-menu">
+        <div class="nav">
+          <div class="sb-sidenav-menu-heading">Core</div>
+          <a class="nav-link" href="index.html">
+            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+            Dashboard
+          </a>
+
+          <div class="sb-sidenav-menu-heading">Gestions</div>
+
+          <a class="nav-link collapsed" routerLink="/gestionPack" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+            Gestion Pack
+            <div class="sb-sidenav-collapse-arrow"></div>
+          </a>
+          <a class="nav-link collapsed" routerLink="/evenment" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+            Gestion Evenement
+            <div class="sb-sidenav-collapse-arrow"></div>
+          </a>
+          <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+            Participants
+            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+          </a>
+
+          <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+            <nav class="sb-sidenav-menu-nested nav">
+              <a class="nav-link" routerLink="/task">taskListe</a>
+              <a class="nav-link" href="AssignementList">OrganiserListe</a>
+            </nav>
+          </div>
+
+
+          <div class="sb-sidenav-menu-heading">Interface</div>
+          <a class="nav-link collapsed"  data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+            Layouts
+            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+          </a>
+          <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+            <nav class="sb-sidenav-menu-nested nav">
+              <a routerlink="/add">Event</a>
+              <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+            </nav>
+          </div>
+
+          <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+            Pages
+            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+          </a>
+          <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+              <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                Authentication
+                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+              </a>
+              <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                <nav class="sb-sidenav-menu-nested nav">
+                  <a class="nav-link" href="login.html">Login</a>
+                  <a class="nav-link" href="register.html">Register</a>
+                  <a class="nav-link" href="password.html">Forgot Password</a>
+                </nav>
+              </div>
+              <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                Error
+                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+              </a>
+              <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                <nav class="sb-sidenav-menu-nested nav">
+                  <a class="nav-link" href="401.html">401 Page</a>
+                  <a class="nav-link" href="404.html">404 Page</a>
+                  <a class="nav-link" href="500.html">500 Page</a>
+                </nav>
+              </div>
+            </nav>
+          </div>
+          <div class="sb-sidenav-menu-heading">Addons</div>
+          <a class="nav-link" href="charts.html">
+            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+            Charts
+          </a>
+          <a class="nav-link" href="tables.html">
+            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+            Tables
+          </a>
         </div>
-        
-        <br><br>
-        <ng-template #mymodal1 let-modal1>
-            <div class="modal-header">
-                <h4 class="modal-title" id="modal-basic-title">Add new Pack</h4>
-                <button type="button" class="close" aria-label="Close" (click)="modal1.dismiss('Cross click')">
-                    <span aria-hidden="true" (click)="cancel()">×</span>
-                </button>
-            </div>
-            
-            <div class="center">
-                <form>
-                    <div class="row" class="col-md-6">
-                        <input type="text" placeholder="description" [(ngModel)]="pack.description"
-                            [ngModelOptions]="{standalone : true}">
-                    </div>
-                    <div class="row" class="col-md-6">
-                        <input type="text" placeholder="Type" [(ngModel)]="pack.typePack"
-                            [ngModelOptions]="{standalone : true}">
-                    </div>
-                    <div class="row" class="col-md-6">
-                        <input type="number" placeholder="Price" [(ngModel)]="pack.price"
-                            [ngModelOptions]="{standalone : true}">
-                    </div>
-                    <div class="row" class="col-md-6">
-                        <input type="text" placeholder="Salle" [(ngModel)]="pack.salle"
-                            [ngModelOptions]="{standalone : true}">
-                    </div>
-                    <br>
-                    
-                    <button type="button" class="btn btn-success" (click)="addPack(pack)"
-                        (click)="modal1.close('Save click')">Add</button>
-                    <button type="button" class="btn btn-info" (click)="modal1.close('Save click')">Cancel</button>
-                   
-                </form>
-            </div>
-        </ng-template>
-        <div class="row">
+      </div>
+      <div class="sb-sidenav-footer">
+        <div class="small">Logged in as:</div>
+        Start Bootstrap
+      </div>
+    </nav>
+  </div>
+
+  <div id="layoutSidenav_content">
+    <main>
+    <div class="col-md-12 ">
+
+      <div class="mb-4 d-flex align-items-center">
+        <i class="fas fa-arrow-left text-muted me-2"></i>
+        <h5 class="mb-0">
+          <a routerLink="/back" class="text-muted text-decoration-none">Back To Home</a>
+        </h5>
+      </div>
+
+
+        <h1 class="mt-4">Gestion Pack</h1>
+
+      <div class="d-flex justify-content-center align-items-center mb-3">
+        <button class="btn btn-round btn-lg btn-success" (click)="open(mymodal1)">Add new Pack</button>
+      </div>
+
+
+
+      <br><br>
+      <ng-template #mymodal1 let-modal1>
+        <div class="modal-content rounded-4 shadow">
+          <div class="modal-header border-0 p-3">
+            <h4 class="modal-title fs-5" id="modal-basic-title">Adding a new pack</h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal1.dismiss('Cross click')"></button>
+          </div>
+          <div class="modal-body p-4">
+            <form>
+              <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <input type="text" class="form-control" id="description" [(ngModel)]="pack.description" [ngModelOptions]="{standalone: true}">
+              </div>
+              <div class="mb-3">
+                <label for="typePack" class="form-label">Type</label>
+                <select class="form-select" [(ngModel)]="pack.typePack" [ngModelOptions]="{standalone: true}">
+                  <option value="SILVER">SILVER</option>
+                  <option value="GOLD">GOLD</option>
+                  <option value="PREMIUM">PREMIUM</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" class="form-control" id="price" [(ngModel)]="pack.price" [ngModelOptions]="{standalone: true}">
+              </div>
+              <div class="mb-3">
+                <label for="salle" class="form-label">Salle</label>
+                <input type="text" class="form-control" id="salle" [(ngModel)]="pack.salle" [ngModelOptions]="{standalone: true}">
+              </div>
+              <div class="mb-3">
+                <label for="nbMax" class="form-label">Nb max</label>
+                <input type="number" class="form-control" id="nbMax" [(ngModel)]="pack.nbMax" [ngModelOptions]="{standalone: true}">
+              </div>
+              <div class="d-flex justify-content-end">
+                <button type="button" class="btn btn-info me-2" (click)="modal1.close('Save click')">Cancel</button>
+                <button type="button" class="btn btn-success" (click)="addPack(pack)" (click)="modal1.close('Save click')">Add</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </ng-template>
+
+      <div class="row">
             <div class="card" class="text-center">
-                <table class="table">
-                    <thead style="background-color: rgb(192, 183, 183);">
-                        <th>Description</th>
-                        <th>Type</th>
-                        <th>Price</th>
-                        <th>Salle</th>
-                        <th>Action</th>
-                    </thead>
-                    <tbody>
+              <table class="table table-hover table-borderless align-middle">
+                <thead class="bg-light text-secondary fw-normal fs-6">
+                <tr>
+                  <th class="text-uppercase" style="letter-spacing: 0.05em;">Description</th>
+                  <th class="text-uppercase" style="letter-spacing: 0.05em;">Type</th>
+                  <th class="text-uppercase" style="letter-spacing: 0.05em;">Price</th>
+                  <th class="text-uppercase" style="letter-spacing: 0.05em;">Salle</th>
+                  <th class="test-uppecase" style="letter-spacing: 0.05em;">Nb booths</th>
+                  <th class="text-uppercase" style="letter-spacing: 0.05em;">Action</th>
+                </tr>
+                </thead>
+
+                  <tbody>
                         <tr *ngFor='let p of listPack'>
                             <td>{{p.description}}</td>
                             <td>{{p.typePack}}</td>
                             <td>{{p.price}}</td>
                             <td>{{p.salle}}</td>
+                            <td>{{p.nbBooths}} / {{p.nbMax}}</td>
                             <td>
                                 <button type="button" class="btn btn-outline-primary" (click)="open(mymodal)">
-                                    edit
+                                    Edit
                                 </button>
-                                <ng-template #mymodal let-modal>
-                                    <div class="modal-header">
-                                        <h4 class="modal-title" id="modal-basic-title">Edit</h4>
-                                        <button type="button" class="close" aria-label="Close"
-                                            (click)="modal.dismiss('Cross click')">
-                                            <span aria-hidden="true" (click)="cancel()">×</span>
-                                        </button>
-                                    </div>
-                                    <div>
-                                        <form>
-                                            <div class="modal-body">
-                                                <div class="row" class="col-md-5">
-                                                    <label>Description</label>
-                                                    <input type="text" [(ngModel)]="p.description"
-                                                        [ngModelOptions]="{standalone : true}" />
-                                                </div>
-                                                <div class="row" class="col-md-5">
-                                                    <label>Type</label>
-                                                    <input type="text" [(ngModel)]="p.typePack"
-                                                        [ngModelOptions]="{standalone : true}" />
-                                                </div>
-                                                <div class="row" class="col-md-5">
-                                                    <label>Price</label>
-                                                    <input type="number" [(ngModel)]="p.price"
-                                                        [ngModelOptions]="{standalone : true}" />
-                                                </div>
-                                                <div class="row" class="col-md-5">
-                                                    <label>Salle</label>
-                                                    <input type="text" [(ngModel)]="p.salle"
-                                                        [ngModelOptions]="{standalone : true}" />
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-info"
-                                                    (click)="modal.close('Save click')" (click)="cancel()">Cancel
-                                                </button>
-                                                <button class="btn btn-success" (click)="editPack(p)"
-                                                    (click)="modal.close('Save click')">Validate</button>
+                              <ng-template #mymodal let-modal>
+                                <div class="modal-content rounded-4 shadow">
+                                  <div class="modal-header border-0 p-3">
+                                    <h4 class="modal-title fs-5" id="modal-basic-title">Edit</h4>
+                                    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+                                  </div>
+                                  <div class="modal-body p-4">
+                                    <form>
+                                      <div class="mb-3">
+                                        <label for="description" class="form-label">Description</label>
+                                        <input type="text" class="form-control" id="description" [(ngModel)]="p.description" [ngModelOptions]="{standalone: true}">
+                                      </div>
+                                      <div class="mb-3">
+                                        <label for="typePack" class="form-label">Type</label>
+                                        <input type="text" class="form-control" id="typePack" [(ngModel)]="p.typePack" [ngModelOptions]="{standalone: true}">
+                                      </div>
+                                      <div class="mb-3">
+                                        <label for="price" class="form-label">Price</label>
+                                        <input type="number" class="form-control" id="price" [(ngModel)]="p.price" [ngModelOptions]="{standalone: true}">
+                                      </div>
+                                      <div class="mb-3">
+                                        <label for="salle" class="form-label">Salle</label>
+                                        <input type="text" class="form-control" id="salle" [(ngModel)]="p.salle" [ngModelOptions]="{standalone: true}">
+                                      </div>
+                                      <div class="mb-3">
+                                        <label for="nbMax" class="form-label">Nb max</label>
+                                        <input type="number" class="form-control" id="nbMax" [(ngModel)]="p.nbMax" [ngModelOptions]="{standalone: true}">
+                                      </div>
+                                      <div class="d-flex justify-content-end">
+                                        <button type="button" class="btn btn-info me-2" (click)="modal.close('Save click')" (click)="cancel()">Cancel</button>
+                                        <button type="button" class="btn btn-success" (click)="editPack(p)" (click)="modal.close('Save click')">Validate</button>
+                                      </div>
+                                    </form>
+                                  </div>
+                                </div>
+                              </ng-template>
 
-
-                                            </div>
-                                        </form>
-                                    </div>
-                                </ng-template>
-                                <button type="button" class="btn btn-outline-danger"
-                                    (click)="deletePack(p.idPack)">delete</button>
+                              <button type="button" class="btn btn-outline-danger"
+                                    (click)="deletePack(p.idPack)">Delete</button>
                                     <button type="button" class="btn btn-outline-success"
-                                    (click)="showBooth(p.idPack)">show booths</button>
+                                    (click)="showBooth(p.idPack)"> Booths</button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            
+
         </div>
     </div>
+    </main>
 
-
+<footer class="py-4 bg-light mt-auto">
+  <div class="container-fluid px-4">
+    <div class="d-flex align-items-center justify-content-between small">
+      <div class="text-muted">Copyright &copy; Your Website 2023</div>
+      <div>
+        <a href="#">Privacy Policy</a>
+        &middot;
+        <a href="#">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+</div>

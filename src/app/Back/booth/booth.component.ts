@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BoothService } from 'src/app/Services/booth.service';
 import { Booth } from 'src/app/models/booth';
+import {PackService} from "../../Services/pack.service";
 
 @Component({
   selector: 'app-booth',
@@ -16,20 +17,36 @@ export class BoothComponent {
   form:boolean=false;
   closeResult!:string;
   idPack:any;
-  constructor(private boothservice: BoothService,private modalService: NgbModal,private activatedroute : ActivatedRoute) {}
+  selectedStatus: string = '';
+  isPackFull: boolean;
+
+  constructor(private boothservice: BoothService,private packService: PackService,private modalService: NgbModal,private activatedroute : ActivatedRoute) {}
   ngOnInit():void{
     this.activatedroute.paramMap.subscribe(params => {
       this.idPack = params.get('idPack');
+      this.getPack(this.idPack);
       this.afficherListBoothWithPackId(this.idPack);
       console.log(this.listbooth)
     });
-    
+
     this.booth={
       idBooth:0,
       description:'',
-      statusBooth:''
+      statusBooth:'',
+      company:null,
+      isInListBooth:null
     }
-    
+
+  }
+  getPack(idPack: any) {
+    this.packService.retrivePack(idPack).subscribe(
+      (pack: any) => {
+        this.isPackFull = pack.nbMax === pack.nbBooths;
+      },
+      (error) => {
+        console.error('Error fetching pack', error);
+      }
+    );
   }
   getAllBooths() {
     this.boothservice.getAllBooths().subscribe(
@@ -43,8 +60,8 @@ export class BoothComponent {
 
 
       });
-      
-      
+
+
   }
   ajouterBoothEtAffecterAPack(idPack:any,booth: any){
     console.log(this.idPack)
@@ -55,9 +72,9 @@ export class BoothComponent {
 
     });
 
-        
+
   }
- 
+
   open(content: any) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
@@ -75,7 +92,7 @@ export class BoothComponent {
       }
     }
     closeForm(){
-  
+
     }
     cancel(){
       this.form = false;
@@ -97,10 +114,45 @@ export class BoothComponent {
 
 
       });
-      
+
     }
 
+  getFilteredBooths() {
+    if (!this.selectedStatus) {
+      return this.listbooth;
+    }
+    return this.listbooth.filter(booth => booth.statusBooth === this.selectedStatus);
+  }
 
- }
+  confirmaBooth(idBooth: any) {
+    if (window.confirm('Are you sure you want to confirm this booth?')) {
+      this.boothservice.confirmBooth(idBooth).subscribe(
+        (response) => {
+          console.log('Booth confirmation successful:', response);
+          this.afficherListBoothWithPackId(this.idPack);
+        },
+        (error) => {
+          console.error('Booth confirmation error:', error);
+        }
+      );
+    }
+  }
+
+  cancelaBooth(idBooth: any) {
+    if (window.confirm('Are you sure you want to cancel this booth?')) {
+      this.boothservice.cancelBooth(idBooth).subscribe(
+        (response) => {
+          console.log('Booth canceled successful:', response);
+          this.afficherListBoothWithPackId(this.idPack);
+        },
+        (error) => {
+          console.error('Booth cancellation error:', error);
+        }
+      );
+    }
+  }
+
+
+}
 
 

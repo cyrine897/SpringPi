@@ -15,8 +15,8 @@ export class PackComponent implements OnInit{
   pack:Pack;
   form:boolean;
   closeResult:string;
-  
-  
+
+
   constructor(private packService:PackService,private modalService:NgbModal,private router : Router)
   {
 
@@ -28,7 +28,9 @@ export class PackComponent implements OnInit{
       description:'',
       typePack :null,
       price:0,
-      salle:''
+      salle:'',
+      nbMax: 0,
+      nbBooths:0
     }
   }
   getAllPacks() {
@@ -41,7 +43,7 @@ export class PackComponent implements OnInit{
         console.error('Error fetching packs:', error);
       }
     );
-         
+
   }
   addPack(pack: any){
     this.packService.addPack(pack).subscribe(() => {
@@ -66,7 +68,7 @@ export class PackComponent implements OnInit{
       }
     }
     closeForm(){
-  
+
     }
     cancel(){
       this.form = false;
@@ -74,12 +76,15 @@ export class PackComponent implements OnInit{
     editPack(pack: Pack){
       this.packService.editPack(pack).subscribe();
     }
-    deletePack(idPack : any){
-      this.packService.deletePack(idPack).subscribe(() => this.getAllPacks())
-    }  
-    showBooth(idPack: number) {
-      this.router.navigate(['booth/'+idPack]);
+   deletePack(idPack: any) {
+    if (window.confirm("Are you sure you want to delete this pack?")) {
+      this.packService.deletePack(idPack).subscribe(() => this.getAllPacks());
+    }
+   }
+
+  showBooth(idPack: number) {
+      this.router.navigate(['gestionBooth/'+idPack]);
       }
-    
+
   }
 

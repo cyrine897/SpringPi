@@ -5,6 +5,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ServiceEvenementService } from 'src/app/Services/service-evenement.service';
 import { HttpClient } from '@angular/common/http';
 
+
+
+
+
+import { response } from 'express';
+
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -12,10 +19,21 @@ import { HttpClient } from '@angular/common/http';
   providers: [ServiceEvenementService]
 })
 
+export class HomeComponent   {
 
-  export class HomeComponent  {
-  constructor(){}
-  }
+
+  
+ 
+  constructor(private activatedroute : ActivatedRoute,private http:HttpClient) {}
+
+
+  
+
+
+
+}
+
+ 
   
     
   

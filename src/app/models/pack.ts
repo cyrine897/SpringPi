@@ -6,5 +6,7 @@ export class Pack {
     typePack: PackType;
     price :number;
     salle :string;
+    nbMax: number;
+    nbBooths: number;
 
 }

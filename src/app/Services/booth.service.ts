@@ -25,13 +25,25 @@ export class BoothService {
     deleteBooth(idBooth : any):Observable<any>{
       return  this.httpClient.delete(`${this.API_URL}/removeBooth/${idBooth}`)
     }
-  
+
     afficherListBoothWithPackId(idPack:any):Observable<any>{
       return this.httpClient.get(`${this.API_URL}/afficherListBoothWithPackId/${idPack}`)
     }
+
     ajouterBoothEtAffecterAPack(idPack:any,booth:Booth):Observable<any>{
       console.log(idPack);
       return this.httpClient.post(this.API_URL+'/ajouterBoothEtAffecterAPack/'+idPack,booth)
-
     }
+
+   requestBooth(idUser: any,idBooth: any): Observable<any> {
+    return this.httpClient.put(`${this.API_URL}/requestBooth/${idUser}/${idBooth}`, null);
+   }
+
+   confirmBooth(idBooth: any): Observable<any> {
+    return this.httpClient.put(`${this.API_URL}/confirmBooth/${idBooth}`, null);
+   }
+
+  cancelBooth(idBooth: any): Observable<any> {
+    return this.httpClient.put(`${this.API_URL}/cancelBooth/${idBooth}`, null);
+  }
 }
