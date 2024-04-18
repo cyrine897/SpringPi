@@ -22,6 +22,7 @@ import { MatInputModule } from '@angular/material/input';
 import { HeroParticipantComponent } from './FrontParticipant/hero-participant/hero-participant.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
+<<<<<<< HEAD
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { TaskModalComponent } from './Back/task-modal/task-modal.component';
 import { TaskComponent } from './Back/task/task.component';
@@ -31,11 +32,18 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { TemplateRef } from '@angular/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+=======
+import { MatDialogModule } from '@angular/material/dialog';
+import { TaskModalComponent } from './Back/task-modal/task-modal.component';
+import { TaskComponent } from './Back/task/task.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 import { OrganiserComponent } from './FrontParticipant/organiser/organiser.component';
 import { OrganiserFormComponent } from './FrontParticipant/organiser-form/organiser-form.component';
 import { Ng2SearchPipe, Ng2SearchPipeModule } from 'ng2-search-filter';
 import { InterfOrganiserComponent } from './FrontParticipant/interf-organiser/interf-organiser.component';
 import { SearchComponent } from './Back/search/search.component';
+<<<<<<< HEAD
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer'
 import { AssignmentListComponentComponent } from './Back/assignment-list-component/assignment-list-component.component';
 import { ConfirmationComponent } from './FrontParticipant/confirmation/confirmation.component';
@@ -47,6 +55,10 @@ import { MatCalendar} from '@angular/material/datepicker';
 import { CalendarComponent } from './FrontParticipant/calendar/calendar.component';
 
   @NgModule({
+=======
+import { AssignmentListComponentComponent } from './Back/assignment-list-component/assignment-list-component.component';
+@NgModule({
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
   declarations: [
     AppComponent,
     ContactCompanyComponent,
@@ -59,24 +71,35 @@ import { CalendarComponent } from './FrontParticipant/calendar/calendar.componen
     HeaderParticipantComponent,
     HeroParticipantComponent,
     ContactParticipantComponent,
+<<<<<<< HEAD
+=======
+    TaskListComponent,
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
  TaskModalComponent,
  TaskComponent,
  OrganiserComponent,
  OrganiserFormComponent,
  SearchComponent,
  InterfOrganiserComponent,
+<<<<<<< HEAD
  AssignmentListComponentComponent,
  ConfirmationComponent,
  ConfirmationDialogComponent,
  StatisticsComponent,
  CalendarComponent  ],
+=======
+ AssignmentListComponentComponent  ],
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
     MatDatepickerModule,
     HttpClientModule,
+<<<<<<< HEAD
     MatDatepickerModule,
+=======
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatDialogModule,
@@ -84,6 +107,7 @@ import { CalendarComponent } from './FrontParticipant/calendar/calendar.componen
     FormsModule,
     MatInputModule,
     MatDialogModule,
+<<<<<<< HEAD
     MatSelectModule,
     Ng2SearchPipeModule,
     MatIconModule,
@@ -94,6 +118,13 @@ import { CalendarComponent } from './FrontParticipant/calendar/calendar.componen
     MatPaginatorModule,
   MatSortModule,
   MatTableModule,
+=======
+    NgbModule, 
+    MatSelectModule,
+    Ng2SearchPipeModule,
+    
+  
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
   ],
   providers: [],
   bootstrap: [AppComponent]

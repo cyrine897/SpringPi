@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Component, ElementRef, ViewChild  , TemplateRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -18,12 +19,22 @@ import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 import { HttpClient } from '@angular/common/http';
 import { Status } from 'src/app/models/Status';
+=======
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TaskService } from 'src/app/Services/task.service';
+import { UserService } from 'src/app/Services/user.service';
+import { Task } from 'src/app/models/task';
+import { User } from 'src/app/models/user';
+
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 @Component({
   selector: 'app-assignment-list-component',
   templateUrl: './assignment-list-component.component.html',
   styleUrls: ['./assignment-list-component.component.css']
 })
 export class AssignmentListComponentComponent {
+<<<<<<< HEAD
   p: number = 1;
   itemsPerPage:number=8;
   private Url = 'http://localhost:8089/pidev/participantRequest'; // Remplacez cela par l'URL réelle de votre backend
@@ -243,6 +254,46 @@ openPDF(pdfData: string, fileName: string ): void {
 
 
 
+=======
+
+
+  affectationRequests: any[] = [];
+  user : User[];
+
+  userForm: FormGroup; // Assurez-vous que cette propriété est correctement initialisée
+
+  constructor(private formBuilder: FormBuilder, private taskService: TaskService) {
+    this.userForm = this.formBuilder.group({
+      userName: ['', Validators.required],
+      mail: ['', [Validators.required, Validators.email]],
+      address: ['', Validators.required],
+      name: ['', Validators.required],
+      description: ['', Validators.required],
+
+      typeTask: ['', Validators.required],
+      message: ['', Validators.required],
+      whyJoin: ['', Validators.required],
+      cv: [null, Validators.required],
+      motivationLetter: [null, Validators.required]    });
+  }
+
+  
+  
+
+// assignment-list-component.component.ts
+ngOnInit(): void {
+  this.taskService.getAffectationRequests(this.userForm).subscribe(
+    (requests) => {
+      // Traitement des demandes d'affectation
+      console.log('Demandes d\'affectation chargées avec succès :', requests);
+      this.affectationRequests = requests;
+    },
+    (error) => {
+      console.error('Erreur lors du chargement des demandes d\'affectation', error);
+    }
+  );
+}
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 
 
   
@@ -250,7 +301,11 @@ openPDF(pdfData: string, fileName: string ): void {
   // ... Autres méthodes et propriétés de votre composant ...
 
 
+<<<<<<< HEAD
 /*acceptRequest(requestId: number): void {
+=======
+acceptRequest(requestId: number): void {
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
     this.taskService.acceptAffectationRequest(requestId).subscribe(
         () => {
             // Mettez à jour la liste des demandes après l'acceptation
@@ -259,6 +314,7 @@ openPDF(pdfData: string, fileName: string ): void {
             console.error('Erreur lors de l\'acceptation de la demande d\'affectation', error);
         }
     );
+<<<<<<< HEAD
 }*/
 getFiles(): void {
   this.participantRequestService.getFiles().subscribe(
@@ -299,6 +355,10 @@ downloadFile(idParticipantRequest: number): void {
 
 
 
+=======
+}
+
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 rejectRequest(requestId: number): void {
     this.taskService.rejectAffectationRequest(requestId).subscribe(
         () => {
@@ -310,6 +370,7 @@ rejectRequest(requestId: number): void {
     );
 }
 
+<<<<<<< HEAD
 PrintInvoice(invoiceNo: string, filename: string, contentType: string, userName: string, email: string, typeTask: TypeTask ) {
   this.participantRequestService.GenerateInvoicePDF(invoiceNo, filename, contentType, userName, email,typeTask  ).subscribe(res => {
 
@@ -448,3 +509,8 @@ SendEmailWithStat(idParticipantRequest: number, email: string, status: Status) {
 
 
 }
+=======
+ 
+}
+
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
