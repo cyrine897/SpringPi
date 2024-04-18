@@ -1,0 +1,23 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { RefusedComponent } from './refused.component';
+
+describe('RefusedComponent', () => {
+  let component: RefusedComponent;
+  let fixture: ComponentFixture<RefusedComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ RefusedComponent ]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(RefusedComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

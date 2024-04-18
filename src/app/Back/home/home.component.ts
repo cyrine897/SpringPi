@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { ServiceParticipantService } from 'src/app/Services/service-participant.service';
 import { Router } from '@angular/router';
 import { Participant } from 'src/app/models/participant';
 import { HttpClient } from '@angular/common/http';
@@ -9,7 +8,6 @@ import { response } from 'express';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  providers: [ServiceParticipantService]
 })
 export class HomeComponent  implements OnInit {
   private baseUrl = 'http://localhost:8089/pidev/participant/addParticipant'; // Remplacez cela par l'URL réelle de votre backend
@@ -17,7 +15,6 @@ export class HomeComponent  implements OnInit {
   Participants: Participant[] = [];
   constructor(
     private fb: FormBuilder,
-    private participantService: ServiceParticipantService,
     private router: Router , private http : HttpClient
   ) {}
 

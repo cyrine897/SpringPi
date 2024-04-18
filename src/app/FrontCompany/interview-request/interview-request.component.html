@@ -1,0 +1,54 @@
+<app-header-company></app-header-company>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="button-container">
+    <a href="accepted" class="main-button">
+        Accepted Interview Request
+    </a>
+    <span style="margin-right: 10px;"></span> <!-- Ajouter de l'espace -->
+    <a href="refused" class="main-button">
+        Refused Interview Request
+    </a>
+   
+</div>
+<div style="margin: 100px;" class="row">  
+  <div class="col-md-12">
+      <div class="row">
+          <div class="card" class="text-center">
+              <table class="table">
+                  <thead style="background-color: rgb(192, 183, 183);">
+                    <th>offer Name </th>   
+                    <th>name </th> 
+                      <th>email</th>
+                      <th>cv</th>
+                      <th>request status </th>
+                      <th>Actions</th>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor='let p of interviewRequests'>
+                        <td>{{ p.offer.name }}</td>
+                        <td>{{p.name }}</td>  
+                          <td>{{p.email}}</td>
+                          <td>{{p.cv}}</td>                      
+                          <td>{{p.requestStatus}}</td>
+                          <td>    
+                            <div class="d-flex justify-content-between">
+                                <button (click)="accepterDemande(p.idInterviewRequest)">Accepter</button>                     
+                                <button (click)="refuserDemande(p.idInterviewRequest)">Refuser</button>
+                              </div>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+

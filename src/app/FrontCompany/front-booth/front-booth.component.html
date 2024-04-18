@@ -1,0 +1,66 @@
+<section id="services" class="services">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2>Booths</h2>
+        <p>Check our Booths</p>
+      </div>
+  
+      <div class="booth-key">
+        <div class="key-item" [ngClass]="'reserved'">
+          <span class="key-color"></span>
+          <span class="key-text">Reserved</span>
+        </div>
+        <div class="key-item" [ngClass]="'in-progress'">
+          <span class="key-color"></span>
+          <span class="key-text">In Progress</span>
+        </div>
+        <div class="key-item" [ngClass]="'available'">
+          <span class="key-color"></span>
+          <span class="key-text">Available</span>
+        </div>
+      </div>
+  
+      <div class="salle">
+        <div class="door"></div>
+        <br> <br>
+        <div class="row">
+          <div *ngFor="let booth of listallbooth" class="booth"
+               [ngClass]="{
+         'reserved': booth.statusBooth === 'RESERVED',
+         'in-progress': booth.statusBooth === 'INPROGRESS',
+         'available': booth.statusBooth === 'AVAILABLE',
+         'other': !isBoothInListBooth(booth)
+       }"
+               (click)="booth.statusBooth === 'AVAILABLE' && isBoothInListBooth(booth) &&open(mymodal1, booth)">
+          </div>
+  
+        </div>
+  
+      </div>
+  
+      <ng-template #mymodal1 let-modal1>
+        <div class="modal-content rounded-4 shadow">
+          <div class="modal-header border-0 p-3">
+            <h4 class="modal-title fs-5" id="modal-basic-title">Request booth</h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal1.dismiss('Cross click')"></button>
+          </div>
+          <div class="modal-body p-4">
+            <form>
+              <div class="mb-3">
+                <label class="form-label">Description</label>
+                <p>{{booth.description}}</p>
+              </div>
+              <div class="d-flex justify-content-end">
+                <button type="button" class="btn btn-info me-2" (click)="modal1.close('Save click')">Cancel</button>
+                <button type="button" class="btn btn-success" (click)="requestBooth(idUser, booth.idBooth)" (click)="modal1.close('Save click')">
+                  Request
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </ng-template>
+  
+    </div>
+  </section>
+  

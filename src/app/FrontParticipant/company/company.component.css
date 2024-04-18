@@ -1,0 +1,18 @@
+.portfolio-details {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement si nécessaire */
+    width: 100%; /* Ajoutez une largeur si nécessaire */
+}
+
+
+.btn-dark-gray {
+    color: #fff;
+    background-color: #bebebe; /* Couleur gris foncé */
+    border-color: #b4b2b2; /* Couleur du bord */
+}
+
+.btn-dark-gray:hover {
+    background-color: #858080; /* Couleur gris foncé plus foncée au survol */
+    border-color: #7a7878;
+}

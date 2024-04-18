@@ -1,0 +1,208 @@
+<app-header-company></app-header-company>
+
+<div style="margin: 100px;" class="row">
+    <div class="col-md-12">
+       <button class="btn btn-round btn-sm btn-danger" (click)="open(mymodal1)">Manage Profile</button>
+        <br><br>
+        <ng-template #mymodal1 let-modal1 >
+          <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">Manage Profile</h4>
+              <button type="button" class="close" aria-label="Close" (click)="modal1.dismiss('Cross click')">
+                  <span aria-hidden="true" (click)="cancel()">×</span>
+              </button>
+          </div>
+          <div class="center">
+            <br>
+              <form > 
+                <div class="modal-body"> 
+                    <input type="text" placeholder="Company Name"  class="form-control"  [(ngModel)]="newCompanyProfile.companyName"
+                          [ngModelOptions]="{standalone : true}" required> 
+                    
+                          <br>
+                    <input type="text" placeholder="Secteur Activities"  class="form-control"  [(ngModel)]="newCompanyProfile.secteur"
+                          [ngModelOptions]="{standalone : true}" required>
+                                                                                                                                                                                                        
+      
+                          
+                        <br>
+                  
+                        <input type="text" placeholder="Contact" class="form-control"  [(ngModel)]="newCompanyProfile.contact" 
+                          [ngModelOptions]="{ standalone: true }">
+                  
+                          <br>
+                          <input type="datetime-local" placeholder="Creation Date"  class="form-control"  [(ngModel)]="newCompanyProfile.creationdate"
+                          [ngModelOptions]="{standalone : true}" required>
+                          
+             
+                          
+      
+                          <br>
+                          <input type="text" placeholder="Company Size"  class="form-control"  [(ngModel)]="newCompanyProfile.companySize"
+                          [ngModelOptions]="{standalone : true}" required>
+      
+      
+      
+                          <br>
+                          <input type="text" placeholder="Company Location"  class="form-control"  [(ngModel)]="newCompanyProfile.location"
+                          [ngModelOptions]="{standalone : true}" required>
+      
+                         
+                          <br>
+      
+      
+                          
+                          
+                          <textarea placeholder="Why Join Us " class="form-control" rows="2" [(ngModel)]="newCompanyProfile.whyJoin" 
+                          [ngModelOptions]="{ standalone: true }"></textarea>
+      
+                          <br>
+                          
+                          
+                          <input [(ngModel)]="newCompanyProfile.image" type="file" class="form-control" (change)="onFileSelected($event)">
+             
+                          <br>
+      
+      
+                          
+                
+                </div> 
+                    <div class="text-center mt-3">
+                        <button type="button" class="btn btn-success btn-lg btn-sm text-white mr-2" (click)=" addAffectCompanyProfile(); modal1.close('Save click')">Add</button>
+                        <span style="margin-right: 10px;"></span> <!-- Ajouter de l'espace -->
+                        <button type="button" class="btn btn-secondary btn-lg btn-sm text-white ml-2" (click)="modal1.close('Save click')">Cancel</button>
+                    </div>
+                 
+                </form>
+          
+          </div>
+          <br>
+      </ng-template>
+      
+      
+        
+        <div class="row">
+            <div class="card" class="text-center">
+                <table class="table">
+                    <thead style="background-color: rgb(192, 183, 183);">
+                        <th>CompanyName</th> 
+                        <th>Secteur</th>
+                        <th>Contact</th>
+                        <th>Creation Date</th>
+                        <th>Company Size</th>
+                        <th>Location</th>
+                                         
+                        <th>Why Join</th>
+                       
+                        <th>Image</th>
+                        <th>Actions</th>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor='let p of companyProfiles'>
+                            <td>{{p.companyName}}</td>
+                            <td>{{p.secteur}}</td>
+                            <td>{{p.contact}}</td>
+                            <td>{{p.creationdate}}</td>
+                            <td>{{p.companySize}}</td>
+                            <td>{{p.location}}</td>
+                            <td>{{p.whyJoin}}</td>
+                            <td><img style="width: 1OOpx; height: 100px; " [src]="p.image" alt=""></td>
+                           
+                            <td>
+                                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+                              
+                              <div class="d-flex justify-content-between">
+                                  <button type="button" class="btn btn-outline-primary mr-3" (click)="open(mymodal)">
+                                    <i class="fas fa-edit"></i> <!-- Utilisez la classe d'icône de Font Awesome pour l'icône d'édition -->
+                                  </button>
+                                  
+                                </div>
+                                
+                                <ng-template #mymodal let-modal>
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="modal-basic-title">Edit The Profile</h4>
+                                        <button type="button" class="close" aria-label="Close"
+                                            (click)="modal.dismiss('Cross click')">
+                                            <span aria-hidden="true" (click)="cancel()">×</span>
+                                        </button>
+                                    </div>
+                                    <div class="center">
+                                      
+                                        <form >
+                                            <div class="modal-body">
+                                                
+  
+                                              <label>Company Name</label>
+                                                  <input type="text"  class="form-control" [(ngModel)]="p.companyName"
+                                                  [ngModelOptions]="{standalone : true}" >
+  
+                                                  <br>
+                                                  <label>Secteur Activities</label>
+                                                  <input type="text"  class="form-control" [(ngModel)]="p.secteur"
+                                                  [ngModelOptions]="{standalone : true}" >
+                                                
+  
+                                                  <br>
+                                                  <label>Contact</label>
+                                                  <input type="text"  class="form-control" [(ngModel)]="p.contact"
+                                                  [ngModelOptions]="{standalone : true}" >
+  
+                                                  <br>
+                                                  <label>Creation Date</label>
+                                                  <input type="text"  class="form-control" [(ngModel)]="p.creationdate"
+                                                  [ngModelOptions]="{standalone : true}" >
+  
+                                                  <br>
+                                                  <label>Company Size</label>
+                                                  <input type="text"  class="form-control" [(ngModel)]="p.companySize"
+                                                  [ngModelOptions]="{standalone : true}" >
+                                                  
+                                                  <br>
+                                                  <label>Our Location</label>
+                                                  <input type="text"  class="form-control" [(ngModel)]="p.location"
+                                                  [ngModelOptions]="{standalone : true}" >
+                                                  
+                                                  
+                                                  
+                                                  
+                                                  
+                                                  
+                                                
+  
+                                                        <br>
+                                                        <label>Why Join</label>
+                                                    <textarea type="text" class="form-control" rows="2" [(ngModel)]="p.whyJoin"
+                                                        [ngModelOptions]="{standalone : true}" > </textarea>
+                                                
+  
+  
+                                                        
+                                                
+                                                        
+                                                        <br>
+                                                        <label for="image">Photo</label>
+                                                         <input type="file" id="image" class="form-control" [(ngModel)]="p.image" (change)="onFileSelected($event)">
+
+                                            </div>
+                                            <div class="text-center mt-3">
+                                                <button type="button" class="btn btn-success btn-lg btn-sm text-white mr-2"
+                                                    (click)="modal.close('Save click')" (click)="cancel()">Cancel</button>
+                                               
+                                                    <span style="margin-right: 10px;"></span> <!-- Ajouter de l'espace -->
+  
+                                                <button class="btn btn-secondary btn-lg btn-sm text-white ml-2"  (click)="updateCompanyProfile(p)"
+                                                    (click)="modal.close('Save click')">Validate</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <br>
+                                </ng-template>
+                                
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+  </div>
+  

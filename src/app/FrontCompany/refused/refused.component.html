@@ -1,0 +1,40 @@
+<app-header-company></app-header-company>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div style="margin: 100px;" class="row">  
+    <div class="col-md-12">
+        <div class="row">
+            <div class="card" class="text-center">
+                <table class="table">
+                    <thead style="background-color: rgb(192, 183, 183);">
+                      <th>offer Name </th>   
+                      <th>name </th> 
+                        <th>email</th>
+                        <th>cv</th>
+                        <th>request status </th>
+                       
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let p of rejectedInterviewRequests'>
+                          <td>{{ p.offer.name }}</td>
+                          <td>{{p.name }}</td>  
+                            <td>{{p.email}}</td>
+                            <td>{{p.cv}}</td>                      
+                            <td>{{p.requestStatus}}</td>
+                            <td>    
+                              
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  
+

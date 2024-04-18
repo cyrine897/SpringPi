@@ -1,0 +1,136 @@
+<app-header-evenement></app-header-evenement>
+
+<section id="testimonials" class="testimonials">
+  <div class="container" data-aos="zoom-in">
+    <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="img">
+            <img src="assets/img/forum.png" class="" alt="">
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+          </div>
+        </div><!-- End testimonial item -->
+        <!-- Add more testimonial items here -->
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<div class="container text-center">
+  
+
+  <div class="row justify-content-center">
+    <br><br><br><br>
+    <h2 style="font-size: 40px; font-family: Arial, sans-serif; font-weight: bold; text-align: center;">What is Esprit Business Forum?</h2>
+    
+    
+      <br><br><br>
+      <div class="image-container slide-in">
+        <img src="/assets/img/bf.jpg" alt="Image 1" class="img-fluid img-thumbnail" style="max-width: 2000px; max-height: 2000px;">
+      </div>
+      <br><br><br><br><br><br>
+      
+      
+      <h5 style="text-align: center; margin-top: 50px; font-size: 20px; font-family: Arial, sans-serif; font-weight: bold;">
+      The Esprit Business Forum, hosted by Esprit University in Tunisia, is an event focused on bringing together students, academics, professionals, and industry leaders to discuss and explore various aspects of business, entrepreneurship, and innovation.
+These forums typically feature a range of activities such as keynote speeches, panel discussions, workshops, networking sessions, and possibly even exhibitions or competitions. The aim is to provide participants with opportunities to learn from experienced professionals, gain insights into the latest trends and developments in the business world, and connect with potential mentors, collaborators, or employers.
+The Esprit Business Forum serves as a platform for exchanging ideas, sharing experiences, and fostering collaboration among individuals interested in business and entrepreneurship. It can be a valuable opportunity for students to expand their knowledge, network with industry professionals, and explore potential career paths or entrepreneurial ventures.</h5>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br>
+<div class="container text-center">
+  <div class="row justify-content-center">
+    
+    <div class="col-md-6">
+      <img src="/assets/img/bf2.jpg" alt="Image 2" style="display: flex; align-self: flex-start; max-width: 600px; max-height: 600px;">
+    </div>
+    
+    <div class="col-md-6">
+      <h3 style="font-size:  40px; font-family: Arial, sans-serif; font-weight: bold;">Interact with other Alumni</h3>
+      <p style="font-size: 20px; font-family: Arial, sans-serif; font-weight: bold; margin-top: 60px;">This forum is a chance, a protal for other students to interact and know each other. Our platform provides a safe place where you can meet up.</p>
+      <a routerLink="/real" class="btn btn-primary">Chat!</a>
+    </div>
+  </div>
+</div>
+<div class="container text-center" style="margin-top: 300px;">
+  <div class="row justify-content-center">
+    
+   
+    
+    <div class="col-md-6">
+      <h3 style="font-size:  40px; font-family: Arial, sans-serif; font-weight: bold;">Increase your chances</h3>
+      <p style="font-size: 20px; font-family: Arial, sans-serif; font-weight: bold; margin-top: 60px;">If you are looking for an internship, a job offer or maybe a full career, you found the right spot. Esprit business forums provides a wide range event where you can meet with Entreprises and make your dreams come true.</p>
+
+    </div>
+    <div class="col-md-6">
+      <img src="/assets/img/bf3.jpg" alt="Image 3" style="display: flex; align-self: flex-start; max-width: 600px; max-height: 600px;">
+    </div>
+  </div>
+</div>
+
+
+
+  <div class="container text-center" style="margin-top: 300px;">
+
+    <h1>Need Further Assistance?</h1>
+    <!-- Clickable Image -->
+    <a routerLink="/chat">
+      <img src="/assets/img/bot.png" alt="Chatbot" class="img-fluid" style="max-width: 200px; max-height: 200px;">
+    </a>
+  </div>
+
+
+<div class="container" data-aos="fade-up">
+  <br>
+  <br>
+  <br>
+  
+  <div class="section-title">
+    <h2>What Do You Think About Us</h2>
+    <p>Review</p>
+  </div>
+
+
+  <!-- Review Form -->
+  <div style="padding-top: 100px; padding-left: 150px;" class="col-lg-8 mt-5 mt-lg-0">
+    <form [formGroup]="reviewForm" (ngSubmit)="addReview()" class="php-email-form">
+      <div class="row">
+        <div class="col-md-12">
+          <ngb-rating [max]="5" formControlName="ratings"></ngb-rating>
+        </div>
+        <div class="col-md-12">
+          <br>
+          <textarea formControlName="comment" type="text" placeholder="Description" class="review-textarea"></textarea>
+        </div>
+      </div>
+      <br>
+      <button type="submit" class="btn btn-success">Submit</button>
+      <br>
+      <br>
+      
+    </form>
+  </div>
+
+  <!-- Display Submitted Reviews -->
+  <div *ngIf="review.length > 0" class="mt-4">
+    <h4>Recent FeedBacks:</h4>
+    <div *ngFor="let review of review" class="review-container">
+      <p>
+        <ng-container *ngFor="let star of generateStars(review.ratings)">
+          <mat-icon class="yellow-star">{{ star }}</mat-icon>
+        </ng-container>
+      </p>
+      <p class="user-comment">
+        <i class="fas fa-user"></i> 
+        {{ review.comment }} 
+      </p>
+    </div>
+  </div>
+  
+
+

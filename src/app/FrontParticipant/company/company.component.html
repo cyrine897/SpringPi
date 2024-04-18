@@ -1,0 +1,106 @@
+<app-header-participant></app-header-participant>
+
+<div id="portfolio" class="portfolio">
+ 
+
+
+	<div class="container" data-aos="fade-up">
+        <div class="section-title d-flex justify-content-between">
+            <div>
+                <br><br><br>
+                <br><br><br>
+                
+
+                <h2>Companys</h2>
+                <p>Check our partnership Companies</p>
+            </div>
+           
+            <div class="search-bar">
+				<br><br><br>
+                <br><br><br>
+				<div class="input-group">
+					<input type="text" class="form-control" [(ngModel)]="searchDomain" placeholder="Search by Company Name">
+					<div class="input-group-append">
+						<button class="btn btn-dark-gray" type="button" (click)="onSearch()">
+							<i class="fas fa-search"></i> <!-- Utilisation de l'icône de recherche de Font Awesome -->
+						</button>
+					</div>
+				</div>
+			</div>
+        </div>
+    </div>
+
+	<br>
+	<br>
+	<br>
+	<br>
+
+
+
+  
+   <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+		<div class="col-lg-4 col-md-6 portfolio-item " *ngFor="let companyProfile of companyProfiles">
+		  <div class="portfolio-wrap">
+			<img [src]="companyProfile.image" class="img-fluid" alt="">
+			<div class="portfolio-info">
+			   <h4>{{ companyProfile.companyName }}</h4>
+            <p>{{ companyProfile.secteur }}</p>
+			  <div class="portfolio-links">
+				<a href="listoffer" title="Available Offers"><i class="bx bx-link"></i></a>
+
+
+				<a (click)="open(mymodal1)" title="More Details"> <i class="fas fa-search"></i></a>
+			  
+				<ng-template #mymodal1 let-modal1 >
+					
+					<div   class="portfolio-details" >
+					 
+					  <div class="col-lg-8">
+						<div class="portfolio-info">
+						  <h3>Company Profile</h3>
+						  <ul>
+							<li><strong>Company Name</strong> : {{ companyProfile.companyName }}</li>
+							<li><strong>Secteur  </strong> : {{ companyProfile.secteur }}</li>
+							<li><strong>Email</strong>: <a href="#">{{ companyProfile.contact }}</a></li>
+							<li><strong>Creation Date </strong> : {{ companyProfile.creationdate }}</li>
+							<li><strong>Company Size</strong> : {{ companyProfile.companySize }}</li>
+							<li><strong>Location</strong> : {{ companyProfile.location }}</li>
+						  </ul>
+						</div>
+						<div class="portfolio-description">
+						  <h2>Why Join Us ?</h2>
+						  <p>
+							{{ companyProfile.whyJoin }}
+						  </p>
+						</div>
+					  </div>
+					
+					</div>
+					<br>
+				</ng-template>
+			
+			
+			</div>
+			</div>
+		  </div>
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div class="pagination">
+			<button class="btn btn-primary" (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+			<span>{{ currentPage }}</span>
+			<button class="btn btn-primary" (click)="changePage(currentPage + 1)" [disabled]="(currentPage * itemsPerPage) >= companyProfiles.length">Next</button>
+		</div>
+	  </div>
+	
+	</div>
+
+
+	
+      
+  
+	

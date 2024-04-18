@@ -1,0 +1,76 @@
+.slide-in {
+    animation: slideIn 1s ease-out forwards;
+  }
+  
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  ngb-rating{
+    color: #FFC107;
+    font-size: 20px;
+  }
+  
+  .yellow-star {
+    color: yellow;
+    font-size: 20px;
+  }
+  .review-container {
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .user-comment {
+    padding-left: 15px; 
+  }
+  
+  .user-comment i {
+    margin-right: 40px; 
+  }
+  
+  .review-textarea {
+    width: 100%; 
+    min-height: 150px; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    resize: vertical; 
+    font-size: 16px; 
+  }
+  
+  
+  
+  
+  .title {
+       flex: 1;
+      text-align: center;
+      padding-top: 60px; 
+    }
+  
+    .testimonial-item {
+      display: flex;
+      justify-content: center;
+    }
+    
+    .testimonial-img {
+      max-width: 100%;
+      height: auto;
+    }
+    .img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 80px;
+    }
+  
+  
+    

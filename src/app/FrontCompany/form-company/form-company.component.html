@@ -1,0 +1,270 @@
+<app-header-company></app-header-company>
+
+<div style="margin: 100px;" class="row">
+  <div class="col-md-12">
+     <button class="btn btn-round btn-sm btn-danger" (click)="open(mymodal1)">Add New Offer</button>
+      <br><br>
+      <ng-template #mymodal1 let-modal1 >
+          <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">Add New Offer</h4>
+              <button type="button" class="close" aria-label="Close" (click)="modal1.dismiss('Cross click')">
+                  <span aria-hidden="true" (click)="cancel()">×</span>
+              </button>
+          </div>
+          <div class="center">
+            <br>
+              <form [formGroup]="formOffer" (ngSubmit)="onSubmit()"> 
+                <div class="modal-body"> 
+                    <div class="container">
+
+                        <div class="row" style="margin-bottom: 8px;">
+                            <input type="text" placeholder="Company Name"  class="form-control" 
+                            formControlName="companyName"> 
+    
+                            <div *ngIf="submitted && formOffer.get('companyName').errors" style="color: red;">
+                                    <div *ngIf="formOffer.get('companyName').errors['required']">
+                                            Company Name is required
+                                    </div>        
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-bottom: 8px;">
+                            <input type="text" placeholder="Name"  class="form-control" formControlName="name"  >
+                            <div *ngIf="submitted && formOffer.get('name').errors" style="color: red;">
+                                <div *ngIf="formOffer.get('name').errors['required']">
+                                         Name is required
+                                </div>        
+                        </div>
+
+                        </div>
+
+                        <div class="row" style="margin-bottom: 8px;">
+                            <select class="form-control" formControlName="domain" >
+                                <option value="" disabled selected>--Please choose the Offer domain--</option>
+                                <option value="Informatique">Informatique</option>
+                                <option value="génie des télécommunications">génie des télécommunications</option>
+                                <option value="génie civil">génie civil</option>
+                                <option value="génie électromécanique">génie électromécanique</option>
+                                <option value="Gestion">Gestion</option>
+                                <option value="Informatique de gestion">Informatique de Gestion</option>
+                            </select>
+
+                            <div *ngIf="submitted && formOffer.get('domain').errors" style="color: red;">
+                                <div *ngIf="formOffer.get('domain').errors['required']">
+                                    Domain is required
+                                </div>        
+                        </div>
+                        </div>
+
+                        <div class="row" style="margin-bottom: 8px;">
+                            <textarea placeholder="Post Description" class="form-control" rows="2" 
+                            formControlName="description"></textarea>
+                            <div *ngIf="submitted && formOffer.get('description').errors" style="color: red;">
+                                <div *ngIf="formOffer.get('description').errors['required']">
+                                    Description is required
+                                </div>        
+                        </div>
+
+                        </div>
+
+                        <div class="row" style="margin-bottom: 8px;">
+                              
+                          <textarea placeholder="Expected Skills " class="form-control" rows="2"  
+                          formControlName="expectedSkills"></textarea>
+                            <div *ngIf="submitted && formOffer.get('expectedSkills').errors" style="color: red;">
+                                <div *ngIf="formOffer.get('expectedSkills').errors['required']">
+                                    Expected Skills is required
+                                </div>        
+                        </div>
+                        </div>
+
+                        <div class="row" style="margin-bottom: 8px;">
+                            <input type="datetime-local" placeholder="dateOffer"  class="form-control" 
+                            formControlName="dateOffer">
+                            <div *ngIf="submitted && formOffer.get('dateOffer').errors" style="color: red;">
+                                <div *ngIf="formOffer.get('dateOffer').errors['required']">
+                                    Date Offer is required
+                                </div>        
+                        </div>
+                        </div>
+
+                        <div class="row" style="margin-bottom: 8px;">
+                            <select class="form-control" formControlName="city">
+                                <option value="" disabled selected>--Please choose the Offer city--</option>
+                                <option value="Tunis">Tunis</option>
+                                <option value="Ariana">Ariana</option>
+                                <option value="Manouba">Manouba</option>
+                                <option value="Ben Arous">Ben Arous</option>
+                                <option value="Nabeul">Nabeul</option>
+                                <option value="Sousse">Sousse</option>
+                            </select>
+                            <div *ngIf="submitted && formOffer.get('city').errors" style="color: red;">
+                                <div *ngIf="formOffer.get('city').errors['required']">
+                                    City is required
+                                </div>        
+                        </div>
+                        </div>
+
+                        <div class="row" style="margin-bottom: 8px;">
+                            <select  class="form-control" formControlName="typeOffer" >
+                                <option value=""  disabled selected>--Please choose an option--</option>
+                                <option value="INTERSHIPPFA">INTERSHIPPFA</option>
+                                <option value="INTERSHIPPFE">INTERSHIPPFE</option>
+                                <option value="JOB">JOB</option>
+                            </select>
+                            <div *ngIf="submitted && formOffer.get('typeOffer').errors" style="color: red;">
+                                <div *ngIf="formOffer.get('typeOffer').errors['required']">
+                                    Type Offer is required
+                                </div>        
+                        </div>
+                        </div>
+
+                    </div>
+                  
+            
+                </div> 
+                    <div class="text-center mt-3">
+                        <button type="submit" class="btn btn-success btn-lg btn-sm text-white mr-2" >Add</button>
+                        <span style="margin-right: 10px;"></span> <!-- Ajouter de l'espace -->
+                        <button type="button" class="btn btn-secondary btn-lg btn-sm text-white ml-2" (click)="modal1.close('Save click')">Cancel</button>
+                    </div>
+                 
+                </form>
+          
+          </div>
+          <br>
+      </ng-template>
+
+      
+      <div class="row">
+          <div class="card" class="text-center">
+              <table class="table">
+                  <thead style="background-color: rgb(192, 183, 183);">
+                      <th>CompanyName </th> 
+                      <th>Name</th>
+                      <th>Domain</th>
+                      <th>Description</th>
+                 
+                      <th>Skills</th>                 
+                      <th>Date </th>
+                      <th>City </th>
+                      <th>Type</th>
+                      <th>Actions</th>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor='let p of listOffer'>
+                          <td>{{p.companyName }}</td>
+                          <td>{{p.name}}</td>
+                          <td>{{p.domain}}</td>
+                          <td>{{p.description}}</td>                       
+                          <td>{{p.expectedSkills}}</td>
+                          <td>{{p.dateOffer}}</td>
+                          <td>{{p.city}}</td>
+                          <td>{{p.typeOffer}}</td>
+                          <td>
+                            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-PEQ/lJ93nZ5yfVxdEeWuZvKtS9U7xWrC0evHU5FfcU5yQk8+Y3VYt1ENdoVUgjgJ17BbJlC2m5VbP4KqehMFQQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+                            
+                            <div class="d-flex justify-content-between">
+                                <button type="button" class="btn btn-outline-primary mr-3" (click)="open(mymodal)">
+                                  <i class="fas fa-edit"></i> <!-- Utilisez la classe d'icône de Font Awesome pour l'icône d'édition -->
+                                </button>
+                                <span style="margin-right: 10px;"></span> <!-- Ajouter de l'espace -->
+                                <button type="button" class="btn btn-outline-danger" (click)="removeOffer(p.idOffer)">
+                                  <i class="fas fa-trash-alt"></i> <!-- Utilisez la classe d'icône de Font Awesome pour l'icône de suppression -->
+                                </button>
+                              </div>
+                              
+                              <ng-template #mymodal let-modal>
+                                  <div class="modal-header">
+                                      <h4 class="modal-title" id="modal-basic-title">Edit The Offer</h4>
+                                      <button type="button" class="close" aria-label="Close"
+                                          (click)="modal.dismiss('Cross click')">
+                                          <span aria-hidden="true" (click)="cancel()">×</span>
+                                      </button>
+                                  </div>
+                                  <div class="center">
+                                    
+                                      <form >
+                                          <div class="modal-body">
+                                              
+
+                                            <label>Company Name</label>
+                                                <input type="text"  class="form-control" [(ngModel)]="p.companyName"
+                                                [ngModelOptions]="{standalone : true}" >
+
+                                                <br>
+                                                <label>Name</label>
+                                                <input type="text"  class="form-control" [(ngModel)]="p.name"
+                                                [ngModelOptions]="{standalone : true}" >
+                                              
+                                                <br>
+                                                <label>Domain</label>
+                                                  
+
+                                                <select class="form-control" [(ngModel)]="p.domain" [ngModelOptions]="{ standalone: true }">
+                                                  <option value="">-- Please choose the Offer domain --</option>
+                                                  <option *ngFor="let domain of existingDomains" [value]="domain" [selected]="domain === p.domain">{{ domain }}</option>
+                                              </select>
+                                              
+                                              <br>
+                                                  <label>Poste Description</label>
+                                                  <textarea type="text" class="form-control" rows="2" [(ngModel)]="p.description"
+                                                      [ngModelOptions]="{standalone : true}" > </textarea>
+                                              
+
+                                                      
+
+
+                                                      <br>
+                                                      <label>Expected Skills</label>
+                                                  <textarea type="text" class="form-control" rows="2" [(ngModel)]="p.expectedSkills"
+                                                      [ngModelOptions]="{standalone : true}" > </textarea>
+                                              
+                                                      
+                                                      <br>
+                                                  <label>Date Offer</label>
+                                                  <input type="datetime-local" class="form-control" [(ngModel)]="p.dateOffer"
+                                                      [ngModelOptions]="{standalone : true}" />
+
+                                                      <br>
+                                                      <label>Offer City </label>
+                                                      <select class="form-control" [(ngModel)]="p.city" [ngModelOptions]="{ standalone: true }">
+                                                        <option value="">-- Please choose the Offer city --</option>
+                                                        <option *ngFor="let city of existingCitys" [value]="city" [selected]="city === p.city">{{ city }}</option>
+                                                    </select>
+                                              
+                                                 
+
+                                                    <br>
+                                                    <label>type</label>
+                                                    <select  [(ngModel)]="p.typeOffer"  class="form-control"   [ngModelOptions]="{ standalone: true }">
+                                                        <option [ngValue]="null" disabled selected>--Please choose the Offer Type --</option>
+                                                        <option value="INTERSHIPPFA">INTERSHIPPFA</option>
+                                                        <option value="INTERSHIPPFE">INTERSHIPPFE</option>
+                                                        <option value="JOB">JOB</option>
+                                                    </select>
+
+                                          </div>
+                                          <div class="text-center mt-3">
+                                              <button type="button" class="btn btn-success btn-lg btn-sm text-white mr-2"
+                                                  (click)="modal.close('Save click')" (click)="cancel()">Cancel</button>
+                                             
+                                                  <span style="margin-right: 10px;"></span> <!-- Ajouter de l'espace -->
+
+                                              <button class="btn btn-secondary btn-lg btn-sm text-white ml-2"  (click)="updateOffer(p)"
+                                                  (click)="modal.close('Save click')">Validate</button>
+                                          </div>
+                                      </form>
+                                  </div>
+                                  <br>
+                              </ng-template>
+                              
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</div>
+

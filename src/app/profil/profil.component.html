@@ -1,0 +1,39 @@
+<!-- Section: Design Block -->
+<section class="text-center text-lg-start">
+    <div class="container py-4">
+      <div class="row g-0 align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <div class="card cascading-right" style="background: hsla(0, 0%, 100%, 0.55);backdrop-filter: blur(30px);">
+            <div class="card-body p-5 shadow-5 text-center">
+              <h2 class="fw-bold mb-5">Your Profile</h2>
+              <div *ngIf="user" class="profile-info text-start mt-5">
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <h6 class="fs-5"><strong>First Name:</strong> {{ user.nom }}</h6>
+                    <br>
+                    <h6 class="fs-5"><strong>Last Name:</strong> {{ user.prenom }}</h6>
+                    <br>
+                    <h6 class="fs-5"><strong>Role:</strong> {{ user.role }}</h6>
+                    <br>
+                    <h6 class="fs-5"><strong>Email:</strong> {{ user.email }}</h6>
+                    <br>
+                    <h6 class="fs-5"><strong>CIN:</strong> {{ user.cin }}</h6>
+                    <br>
+                    <h6 class="fs-5"><strong>Date of Birth:</strong> {{ user.dateN | date }}</h6>
+                    <br>
+                    <a href="http://localhost:4200/smsreset" class="btn btn-secondary btn-block mb-4">Reset-Password</a>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <img src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg" class="w-100 rounded-4 shadow-4"
+            alt="" />
+        </div>
+      </div>
+    </div>
+  </section>
+  

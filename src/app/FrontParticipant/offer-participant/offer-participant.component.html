@@ -1,0 +1,122 @@
+<app-header-participant></app-header-participant>
+
+<section id="services" class="services">
+    <div class="container" data-aos="fade-up">
+        <div class="section-title d-flex justify-content-between">
+            <div>
+
+                <br><br><br>
+                <br><br><br>
+                <h2>Offers</h2>
+                <p>Check our Offers</p>
+                
+            </div>
+            <div class="search-bar">
+				<br><br><br>
+                <br><br><br>
+				<div class="input-group">
+					<input type="text" class="form-control" [(ngModel)]="searchDomain" placeholder="Search by Domain">
+					<div class="input-group-append">
+						<button class="btn btn-dark-gray" type="button" (click)="onSearch()">
+							<i class="fas fa-search"></i> <!-- Utilisation de l'icône de recherche de Font Awesome -->
+						</button>
+					</div>
+				</div>
+			</div>
+            
+        </div>
+    </div>
+
+    
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4" *ngFor="let offer of displayedOffers" data-aos="zoom-in" data-aos-delay="100">
+                <div class="icon-box  text-left" style="margin-bottom: 20px;">
+                    <p><strong style="font-size: 10px;">{{ offer.companyName }}</strong></p>  
+                    <p><strong style="font-size: 20px;">{{ offer.name }}</strong></p>
+                    <p><strong >Offer Domain : </strong>{{ offer.domain }}</p>  
+                    <!-- Ajustez la taille de la police selon vos besoins -->
+                    <p><strong >Offer description : </strong>{{ offer.description }}</p>
+                    <p><strong >Expected Skills : </strong>{{ offer.expectedSkills }}</p>    
+                    <p><strong >Offer limit Date :</strong> {{ offer.dateOffer }}</p>  
+                    <p><strong >Company Location  :</strong> {{ offer.city }}</p>  
+                    <p><strong >Offer Type :</strong> {{ offer.typeOffer }}</p>
+            
+                  
+                       
+                    <button class="btn btn-round btn-sm btn-danger"  (click)="open(mymodal1, offer.idOffer)" >Interview Request</button>
+
+                      
+                    <br><br>
+                    <ng-template #mymodal1 let-modal1 >
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="modal-basic-title">Interview Request</h4>
+                            <button type="button" class="close" aria-label="Close" (click)="modal1.dismiss('Cross click')">
+                                <span aria-hidden="true" (click)="cancel()">×</span>
+                            </button>
+                        </div>
+                        <div class="center">
+                          <br>
+                            <form > 
+                                
+                              <div class="modal-body"> 
+                                  <input type="text" placeholder=" Your Name"  class="form-control"  [(ngModel)]="interviewRequest.name"
+                                        [ngModelOptions]="{standalone : true}" ngModel required> 
+                                  
+                                        <br>
+                                  <input type="text" placeholder="email"  class="form-control"  [(ngModel)]="interviewRequest.email"
+                                        [ngModelOptions]="{standalone : true}" ngModel required>
+                                                                                                                                                                                                                      
+                                        <br>
+
+                                        <input [(ngModel)]="interviewRequest.cv" type="file" 
+                                        class="form-control" (change)="onFileSelected($event)">
+                                        
+                                      
+    
+                              
+                              </div> 
+                                  <div class="text-center mt-3">
+
+                                   
+                                      
+                                      <button type="button" class="btn btn-success btn-lg btn-sm text-white mr-2" (click)="addInterviewRequest(interviewRequest, offerId); modal1.close('Save click') ;open(mymodal1, interviewRequest)">Add Interview Request</button>
+                                      <ng-template #mymodal1 let-modal1 >
+                                        <div class="modal-header">
+                                        <div *ngIf="showSuccessMessage" class="alert alert-success">
+                                            {{interviewRequest.name}} The Interview request is added successfully, we will contact you later if you are accepted <br>
+                                            Thank You and always remember "Sky is the limit"
+                                          </div>
+                                        </div>
+                                    </ng-template>
+
+                                      <span style="margin-right: 10px;"></span> <!-- Ajouter de l'espace -->
+                                      <button type="button" class="btn btn-secondary btn-lg btn-sm text-white ml-2" (click)="modal1.close('Save click')">Cancel</button>
+                                  </div>
+                               
+                              </form>
+                        
+                        </div>
+                        <br>    
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!-- Ajouter des contrôles de pagination -->
+    <div class="pagination-container">
+        <div class="pagination">
+            <button class="btn btn-primary" (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+            <span>{{ currentPage }}</span>
+            <button class="btn btn-primary" (click)="changePage(currentPage + 1)" [disabled]="(currentPage * itemsPerPage) >= listOffer.length">Next</button>
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,78 @@
+body {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    background-color: #f0f0f0; /* Light gray background for the entire page */
+  }
+  
+  .chat-container {
+    width: 100%; /* Fill the entire width of the page */
+    max-width: 800px; /* Limit the maximum width of the chat container */
+    margin: 0 auto; /* Center the chat container horizontally */
+    background-color: #fff; /* White background for the chat container */
+    border-radius: 10px; /* Rounded corners for the chat container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect for the chat container */
+    padding: 20px; /* Add some padding inside the chat container */
+  }
+  
+  .message {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  .message-icon {
+    margin-right: 10px;
+  }
+  
+  .message-icon i {
+    font-size: 24px;
+  }
+  
+  .user-message .message-content {
+    background-color: #e6f7ff; /* Light blue background for user messages */
+    color: #333; /* Dark text color for user messages */
+  }
+  
+  .bot-message .message-content {
+    background-color: #f2f2f2; /* Light gray background for bot messages */
+    color: #333; /* Dark text color for bot messages */
+  }
+  
+  .message-content {
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%; /* Adjusted maximum width for message content */
+    word-wrap: break-word; /* Allow long messages to wrap */
+  }
+  
+  .input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px; /* Reduced margin-top for the input container */
+    padding: 10px; /* Added padding for the input container */
+    background-color: #f0f0f0; /* Light gray background for the input container */
+  }
+  
+  .input-container input[type="text"] {
+    flex: 1;
+    width: calc(100% - 100px); /* Adjusted width to match the chat container */
+    padding: 10px; /* Increased padding for better alignment */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .input-container button {
+    padding: 10px 20px; /* Adjusted padding for the send button */
+    background-color: #4CAF50; /* Green color for the send button */
+    color: white; /* White text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for button hover effect */
+  }
+  
+  .input-container button:hover {
+    background-color: #45a049; /* Darker green color on hover */
+  }
+  

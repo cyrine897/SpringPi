@@ -1,0 +1,48 @@
+/* stats.component.css */
+
+.stats-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .stats-item {
+    background-color: #e9ebf1;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  
+  .stats-key {
+    font-weight: bold;
+    color: black;
+  }
+  
+  .stats-value {
+    margin-left: 10px;
+    color: black;
+
+  }
+
+  .total-participant-requests {
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.total-participant-requests__title {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.total-participant-requests__count {
+    color: #008cba;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+  

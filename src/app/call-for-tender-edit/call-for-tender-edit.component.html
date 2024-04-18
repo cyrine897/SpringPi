@@ -1,0 +1,22 @@
+<!-- call-for-tender-edit.component.html -->
+
+<div class="container">
+    <form [formGroup]="callForTenderForm" (ngSubmit)="onSubmit()" class="form">
+      <div>
+        <label for="name">Nom :</label>
+        <input type="text" id="name" formControlName="name" required>
+      </div>
+      <div>
+        <label for="description">Description :</label>
+        <textarea id="description" formControlName="description" required></textarea>
+      </div>
+      <div>
+        <label for="quantity">Quantité :</label>
+        <input type="number" id="quantity" formControlName="quantity" required>
+      </div>
+      <div>
+        <button type="submit" [disabled]="callForTenderForm.invalid" class="submit-button">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+  
