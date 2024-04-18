@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Task } from '../models/task';
 import { Role } from '../models/role';
 import { FormGroup } from '@angular/forms';
+import { TypeTask } from '../models/typeTask';
 @Injectable({
   providedIn: 'root'
 })
@@ -59,6 +60,10 @@ assignTaskToOrganizer(idUser: number, idTask: number): Observable<any> {
 }*/
 acceptAffectationRequest(requestId: number): Observable<any> {
   return this.http.post(`${this.baseUrl}/accept/${requestId}`, {});
+}
+
+getTaskStatisticsByTypeTask(): Observable<Map<TypeTask, number>> {
+  return this.http.get<Map<TypeTask, number>>(this.baseUrl+ `/statistics`);
 }
 
 rejectAffectationRequest(requestId: number): Observable<any> {

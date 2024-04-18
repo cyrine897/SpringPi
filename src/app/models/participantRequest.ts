@@ -1,3 +1,4 @@
+import { Status } from "./Status";
 import { TypeTask } from "./typeTask";
 export class ParticipantRequest {
 
@@ -10,5 +11,5 @@ export class ParticipantRequest {
     contentType: string;
     filename: string;
     invoiceNo: string;
-    status: string;
+    status: Status;
 }

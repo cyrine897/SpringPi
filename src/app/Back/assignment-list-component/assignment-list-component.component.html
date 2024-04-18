@@ -127,8 +127,15 @@
                             <div class="card-body">Warning Card</div>
                             <div class="card-footer d-flex align-items-center justify-content-between">
                                 <a class="small text-white stretched-link" href="#">View Details</a>
-                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i> </div>
+                               
+                                  
                             </div>
+                            <div class="total-participant-requests">
+                                <h2 class="total-participant-requests__title">Total Participant Requests</h2>
+                                <div class="total-participant-requests__count">{{ totalParticipantRequests }}</div>
+                            </div>
+                            
                         </div>
                     </div>
                     <div class="col-xl-3 col-md-6">
@@ -138,80 +145,94 @@
                                 <a class="small text-white stretched-link" href="#">View Details</a>
                                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                             </div>
+                            <div class="total-participant-requests">
+                                <h2 class="total-participant-requests__title">Validated Participant Requests</h2>
+                                <div class="total-participant-requests__count">  {{ acceptedCount }} </div>
+                            </div>
+                            <div class="total-participant-requests">
+                                <h2 class="total-participant-requests__title">Rejected Participant Requests</h2>
+                                <div class="total-participant-requests__count"> {{ refusedCount }} </div>
+                            </div>
+                           
+                            
+                            
+                            
                         </div>
                     </div>
                     <div class="col-xl-3 col-md-6">
-                        <div class="card bg-danger text-white mb-4">
+                        <div  class="card bg-danger text-white mb-4">
                             <div class="card-body">Danger Card</div>
-                            <div class="card-footer d-flex align-items-center justify-content-between">
+                            <div  class="card-footer d-flex align-items-center justify-content-between">
                                 <a class="small text-white stretched-link" href="#">View Details</a>
                                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                               
+                                <div  class="total-participant-requests" *ngIf="statusCounts">
+                                    <p class="total-participant-requests__title">Accepted: {{ statusCounts.accepted }}</p>
+                                    <p class="total-participant-requests__title">Refused: {{ statusCounts.refused }}</p>
+                                    <p class="total-participant-requests__title">In Progress: {{ statusCounts.inProgress }}</p>
+                                  </div>
+                                  
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="row" >
-                    <div class="col-xl-6">
-                        <div class="card mb-4" style="width: 1200px">
+               
+
+
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-chart-area me-1"></i>
                                 List of Futur Organisers
                             </div>
-                            <div class="mat-elevation-z8"></div>
                             <div class="card-body">
-                                <!-- Add MatPaginator component -->
                                 <app-search (searchTextChanged)=" onSearchTextChanged($event)"></app-search>
                                 <pagination-controls style="width: 800px;margin-left: 1500px;" (pageChange)="p = $event"></pagination-controls>
 
-                                <table class="table">
+                                <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th>UserName</th>
+                                            <th>User Name</th>
                                             <th>Email</th>
-
                                             <th>File</th>
                                             <th>Filename</th>
-                                            <th>TypeTask</th>
-                                            <th>ContentType</th>
+                                            <th>Type Task</th>
+                                            <th>Content Type</th>
                                             <th>Actions</th>
+                                            <th>Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <!-- Utilisez MatTableDataSource pour la liaison de données -->
-                                        <tr   *ngFor="let list of listParticipantRequest | paginate: { itemsPerPage: 10, currentPage: p }">
-                                            <!-- User Details -->
-                                            
-                                            <!-- File -->
-                                          
-                                            <td>{{list.userName}}</td>
-                                            <td>{{list.email}}</td>
+                                        <tr *ngFor="let list of listParticipantRequest | paginate: { itemsPerPage: 10, currentPage: p }">
+                                            <td>{{ list.userName }}</td>
+                                            <td>{{ list.email }}</td>
                                             <td *ngIf="searchText === '' || list.userName.toLowerCase().includes(searchText)">
                                                 <img style="width: 60px;" src="assets/img/cv.png">
                                                 <button class="btn btn-primary" (click)="downloadFile(list.idParticipantRequest)">Download</button>
                                             </td>
-                                            <!-- Filename -->
                                             <td>{{ list.filename }}</td>
-                                            <!-- TypeTask -->
                                             <td>{{ list.typeTask }}</td>
-                                            <!-- ContentType -->
                                             <td>{{ list.contentType }}</td>
-                                            <!-- Actions -->
-                                            <td *ngIf="searchText === '' || list.userName.toLowerCase().includes(searchText)">
-                                                <button class="btn btn-success" (click)="acceptAction(list.idParticipantRequest)" >Accepter</button>
-                                                <button class="btn btn-danger" (click)="refuseAction(list.idParticipantRequest)" >Refuser</button>
-                                                <button style="margin-top: 20px;" class="btn btn-danger" (click)="DownloadInvoice(list.invoiceNo, list.filename, list.contentType, list.userName, list.email, list.typeTask )">Download</button>
-                                                <button style="margin-top: 20px;" class="btn btn-success" (click)="PrintInvoice(list.invoiceNo, list.filename, list.contentType, list.userName, list.email, list.typeTask  )">Print</button>
+                                            <td style="margin: 15px;" *ngIf="searchText === '' || list.userName.toLowerCase().includes(searchText)">
+                                                <button class="btn btn-success" (click)="acceptRequest(list.idParticipantRequest , list.email)">Accepted</button>
+                                                <button class="btn btn-primary" (click)="exportRowToExcel(list, 'row_data')">Export to Excel</button>
+                                                <button class="btn btn-danger"(click)="InProgressRequest(list.idParticipantRequest)">In Progress</button>
+                                                <button class="btn btn-danger"(click)="SendEmailWithStat(list.idParticipantRequest , list.email , list.status)">Send Email With Stat</button>
+                                                <button class="btn btn-danger" (click)="refuseRequest(list.idParticipantRequest)">Refused</button>
+                                                <button class="btn btn-danger" (click)="DownloadInvoice(list.invoiceNo, list.filename, list.contentType, list.userName, list.email, list.typeTask)">Download</button>
+                                                <button class="btn btn-success" (click)="PrintInvoice(list.invoiceNo, list.filename, list.contentType, list.userName, list.email, list.typeTask)">Print</button>
                                             </td>
+                                            <td>{{ list.status }}</td>
                                         </tr>
                                     </tbody>
                                 </table>
-                                
-                              </div>
-                              
+                            </div>
                         </div>
                     </div>
-                </div> 
+                </div>
+                
                 
                 </div>
               

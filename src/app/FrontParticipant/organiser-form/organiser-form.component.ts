@@ -15,6 +15,7 @@ import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation
 import { HttpClient, HttpEventType } from '@angular/common/http';
 import { ParticipantRequestService } from 'src/app/Services/participant-request.service';
 import { ParticipantRequest } from 'src/app/models/participantRequest';
+import { Status } from 'src/app/models/Status';
 @Component({
   selector: 'app-organiser-form',
   templateUrl: './organiser-form.component.html',
@@ -25,6 +26,8 @@ import { ParticipantRequest } from 'src/app/models/participantRequest';
 export class OrganiserFormComponent {
   private baseUrl = 'http://localhost:8089/pidev/back/task';
   private Url = 'http://localhost:8089/pidev/participantRequest'; // Remplacez cela par l'URL réelle de votre backend
+  toEmail: string = '';
+
   participantRequest: ParticipantRequest = {
     userName: '',
     file: null,
@@ -34,7 +37,7 @@ export class OrganiserFormComponent {
     contentType: '',
     invoiceNo: '',
     idParticipantRequest: 0,
-    status: ''
+    status: null
   };
   userForm: FormGroup;
   userName : string;
@@ -70,7 +73,9 @@ export class OrganiserFormComponent {
       this.selectedFile = fileList[0];
     }
   }
+  
 
+ 
   uploadFile(): void {
     if (this.selectedFile) {
       this.ParticipantRequestService.uploadFile(
@@ -108,11 +113,12 @@ export class OrganiserFormComponent {
 
 
 
+
         contentType: '',
         filename: '',
         invoiceNo: '',
         idParticipantRequest: 0,
-        status: ''
+        status: this.userForm.get('Status').value
       };
   
       this.ParticipantRequestService.addOrganiserToTask(participantRequest)
@@ -163,10 +169,21 @@ export class OrganiserFormComponent {
   }
   handleOn(): void {
     this.openConfirmation();
-  
     this.uploadFile();
+   this.sendEmail();
   }
-  
+ 
+  sendEmail() {
+    this.ParticipantRequestService.sendEmail(this.email).subscribe(
+      response => {
+        console.log('Email envoyé avec succès');
+      },
+      error => {
+        console.error('Erreur lors de l\'envoi de l\'email : ', error);
+      }
+    );
+  }
+ 
  add(participantRequest: ParticipantRequest): void {
   this.ParticipantRequestService.addOrganiserToTask(participantRequest)
     .subscribe(

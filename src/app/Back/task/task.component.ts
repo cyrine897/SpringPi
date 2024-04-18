@@ -6,6 +6,7 @@ import { Task } from 'src/app/models/task';
 import { Router } from '@angular/router';
 import { TypeTask } from 'src/app/models/typeTask';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Chart } from 'chart.js';
 @Component({
   selector: 'app-task',
   templateUrl: './task.component.html',
@@ -15,6 +16,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 export class TaskComponent implements OnInit {
   listTask: Task[] = [];
   task: Task;
+  dogBarChart: any; // Déclarer la variable dogBarChart ici
+
   form: boolean;
   closeResult: string;
   typeTask: TypeTask;
@@ -31,6 +34,8 @@ export class TaskComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.RenderDogBar();
+    this.RenderChart();
     this.getTasks();
     this.task = {
       idTask: 0,
@@ -79,6 +84,43 @@ export class TaskComponent implements OnInit {
     );
   }
 
+  RenderChart() {
+    // Appeler la méthode du service pour récupérer les données des tâches
+    this.taskService.getTaskStatisticsByTypeTask().subscribe(data => {
+      // Convertir les données reçues en un format utilisable par Chart.js
+      const labels = Object.keys(data);
+      const values = Object.values(data);
+  
+      // Créer les données du graphique circulaire
+      const pieChartData = {
+        labels: labels,
+        datasets: [{
+          label: 'Nombre de tâches',
+          data: values,
+          backgroundColor: [
+            'rgb(255, 99, 132)',
+            'rgb(75, 192, 192)',
+            'rgb(255, 205, 86)',
+            'rgb(201, 203, 207)',
+            'rgb(54, 162, 235)'
+          ],
+          hoverOffset: 4
+        }]
+      };
+  
+      // Récupérer le canvas pour le graphique circulaire
+      const canvas = <HTMLCanvasElement>document.getElementById('piechart');
+      const ctx = canvas.getContext('2d');
+  
+      // Créer le graphique circulaire
+      const pieChart = new Chart(ctx, {
+        type: 'pie',
+        data: pieChartData,
+      });
+    });
+  }
+  
+
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';
@@ -108,4 +150,58 @@ export class TaskComponent implements OnInit {
   showBooth(idTask: number): void {
     this.router.navigate(['booth/' + idTask]);
   }
+
+  RenderDogBar() {
+    // Appeler la méthode du service pour récupérer les données des statistiques des tâches
+    this.taskService.getTaskStatisticsByTypeTask().subscribe(data => {
+      // Convertir les données reçues en un format utilisable par Chart.js
+      const labels = Object.keys(data);
+      const values = Object.values(data);
+  
+      // Créer les données du graphique à barres
+      const barChartData = {
+        labels: labels,
+        datasets: [{
+          label: 'Nombre de participants par type de tâche',
+          data: values,
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 205, 86, 0.2)'
+          ],
+          borderColor: [
+            'rgb(255, 99, 132)',
+            'rgb(54, 162, 235)',
+            'rgb(255, 205, 86)'
+          ],
+          borderWidth: 1
+        }]
+      };
+  
+      // Récupérer le canvas pour le graphique à barres
+      const canvas = <HTMLCanvasElement>document.getElementById('dogBarChart');
+      const ctx = canvas.getContext('2d');
+  
+      // Vérifier si un graphique existe déjà et le détruire
+      if (this.dogBarChart) {
+        this.dogBarChart.destroy();
+      }
+  
+      // Créer le graphique à barres et stocker une référence
+      this.dogBarChart = new Chart(ctx, {
+        type: 'bar',
+        data: barChartData,
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    });
+  }
+  
+  
+
 }

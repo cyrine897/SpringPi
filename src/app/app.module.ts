@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { HomeComponent } from './Back/home/home.component';
 import { RouterModule } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -31,6 +30,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { TemplateRef } from '@angular/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { OrganiserComponent } from './FrontParticipant/organiser/organiser.component';
 import { OrganiserFormComponent } from './FrontParticipant/organiser-form/organiser-form.component';
 import { Ng2SearchPipe, Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -42,6 +42,9 @@ import { ConfirmationComponent } from './FrontParticipant/confirmation/confirmat
 import { ConfirmationDialogComponent } from './FrontParticipant/confirmation-dialog/confirmation-dialog.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { StatisticsComponent } from './Back/statistics/statistics.component';
+import { MatCalendarBody } from '@angular/material/datepicker';
+import { MatCalendar} from '@angular/material/datepicker';
+import { CalendarComponent } from './FrontParticipant/calendar/calendar.component';
 
   @NgModule({
   declarations: [
@@ -49,13 +52,13 @@ import { StatisticsComponent } from './Back/statistics/statistics.component';
     ContactCompanyComponent,
     HeaderCompanyComponent,
     HeroCompanyComponent,
+    TaskListComponent,
     ContactEventOrganiserComponent,
     HeroEventOrganiserComponent,
     HeaderEventOrganiserComponent,
     HeaderParticipantComponent,
     HeroParticipantComponent,
     ContactParticipantComponent,
-    TaskListComponent,
  TaskModalComponent,
  TaskComponent,
  OrganiserComponent,
@@ -65,12 +68,15 @@ import { StatisticsComponent } from './Back/statistics/statistics.component';
  AssignmentListComponentComponent,
  ConfirmationComponent,
  ConfirmationDialogComponent,
- StatisticsComponent  ],
+ StatisticsComponent,
+ CalendarComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule, 
+    RouterModule,
+    MatDatepickerModule,
     HttpClientModule,
+    MatDatepickerModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatDialogModule,

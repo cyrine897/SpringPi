@@ -1,0 +1,13 @@
+<!-- calendar.component.html -->
+<div class="container">
+    <ngb-datepicker 
+      [showWeekNumbers]="true" 
+      (hover)="onHover($event)"
+      (dateSelect)="formatDate($event)">
+    </ngb-datepicker>
+  
+    <div *ngIf="hoveredDate" class="alert alert-info mt-3">
+      Date sélectionnée: {{ formatDate(hoveredDate) }}
+    </div>
+  </div>
+  
