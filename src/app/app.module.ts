@@ -23,6 +23,7 @@ import { HeroParticipantComponent } from './FrontParticipant/hero-participant/he
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { TaskModalComponent } from './Back/task-modal/task-modal.component';
 import { TaskComponent } from './Back/task/task.component';
@@ -33,16 +34,22 @@ import { MatTableModule } from '@angular/material/table';
 import { TemplateRef } from '@angular/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 =======
+=======
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 import { MatDialogModule } from '@angular/material/dialog';
 import { TaskModalComponent } from './Back/task-modal/task-modal.component';
 import { TaskComponent } from './Back/task/task.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+<<<<<<< HEAD
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
+=======
 >>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 import { OrganiserComponent } from './FrontParticipant/organiser/organiser.component';
 import { OrganiserFormComponent } from './FrontParticipant/organiser-form/organiser-form.component';
 import { Ng2SearchPipe, Ng2SearchPipeModule } from 'ng2-search-filter';
 import { InterfOrganiserComponent } from './FrontParticipant/interf-organiser/interf-organiser.component';
 import { SearchComponent } from './Back/search/search.component';
+<<<<<<< HEAD
 <<<<<<< HEAD
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer'
 import { AssignmentListComponentComponent } from './Back/assignment-list-component/assignment-list-component.component';
@@ -56,6 +63,8 @@ import { CalendarComponent } from './FrontParticipant/calendar/calendar.componen
 
   @NgModule({
 =======
+=======
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 import { AssignmentListComponentComponent } from './Back/assignment-list-component/assignment-list-component.component';
 @NgModule({
 >>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
@@ -72,6 +81,10 @@ import { AssignmentListComponentComponent } from './Back/assignment-list-compone
     HeroParticipantComponent,
     ContactParticipantComponent,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    TaskListComponent,
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 =======
     TaskListComponent,
 >>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
@@ -82,11 +95,15 @@ import { AssignmentListComponentComponent } from './Back/assignment-list-compone
  SearchComponent,
  InterfOrganiserComponent,
 <<<<<<< HEAD
+<<<<<<< HEAD
  AssignmentListComponentComponent,
  ConfirmationComponent,
  ConfirmationDialogComponent,
  StatisticsComponent,
  CalendarComponent  ],
+=======
+ AssignmentListComponentComponent  ],
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 =======
  AssignmentListComponentComponent  ],
 >>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
@@ -97,7 +114,10 @@ import { AssignmentListComponentComponent } from './Back/assignment-list-compone
     MatDatepickerModule,
     HttpClientModule,
 <<<<<<< HEAD
+<<<<<<< HEAD
     MatDatepickerModule,
+=======
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 =======
 >>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
     ReactiveFormsModule,
@@ -107,6 +127,7 @@ import { AssignmentListComponentComponent } from './Back/assignment-list-compone
     FormsModule,
     MatInputModule,
     MatDialogModule,
+<<<<<<< HEAD
 <<<<<<< HEAD
     MatSelectModule,
     Ng2SearchPipeModule,
@@ -119,11 +140,16 @@ import { AssignmentListComponentComponent } from './Back/assignment-list-compone
   MatSortModule,
   MatTableModule,
 =======
+=======
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
     NgbModule, 
     MatSelectModule,
     Ng2SearchPipeModule,
     
   
+<<<<<<< HEAD
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
+=======
 >>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
   ],
   providers: [],

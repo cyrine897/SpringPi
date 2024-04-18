@@ -9,6 +9,7 @@ import { Role } from 'src/app/models/role';
 import { EmailService } from 'src/app/Services/email.service';
 import { User } from 'src/app/models/user';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Observable } from 'rxjs';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ConfirmationComponent } from '../confirmation/confirmation.component';
@@ -17,6 +18,8 @@ import { HttpClient, HttpEventType } from '@angular/common/http';
 import { ParticipantRequestService } from 'src/app/Services/participant-request.service';
 import { ParticipantRequest } from 'src/app/models/participantRequest';
 import { Status } from 'src/app/models/Status';
+=======
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 =======
 >>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 @Component({
@@ -28,6 +31,7 @@ import { Status } from 'src/app/models/Status';
 })
 export class OrganiserFormComponent {
   private baseUrl = 'http://localhost:8089/pidev/back/task';
+<<<<<<< HEAD
 <<<<<<< HEAD
   private Url = 'http://localhost:8089/pidev/participantRequest'; // Remplacez cela par l'URL réelle de votre backend
   toEmail: string = '';
@@ -56,16 +60,22 @@ export class OrganiserFormComponent {
   result$: Observable<string>;
   constructor(private formBuilder: FormBuilder, private taskService: TaskService, private dialog: MatDialog , private http : HttpClient , private ParticipantRequestService : ParticipantRequestService) {
 =======
+=======
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 
   userForm: FormGroup;
   users: User[] = [];
 
   constructor(private formBuilder: FormBuilder, private taskService: TaskService, private emailService: EmailService) {
+<<<<<<< HEAD
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
+=======
 >>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
     this.userForm = this.formBuilder.group({
       idUser: ['', Validators.required],
       idTask: ['', Validators.required],
       userName: ['', Validators.required],
+<<<<<<< HEAD
 <<<<<<< HEAD
       email: ['', [Validators.required, Validators.email]],
       address: ['', Validators.required],
@@ -239,6 +249,8 @@ export class OrganiserFormComponent {
 }
 
 =======
+=======
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
       mail: ['', [Validators.required, Validators.email]],
       address: ['', Validators.required],
       typeTask: ['', Validators.required],
@@ -257,6 +269,9 @@ export class OrganiserFormComponent {
       }
     );
   }
+<<<<<<< HEAD
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
+=======
 >>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 
 }  

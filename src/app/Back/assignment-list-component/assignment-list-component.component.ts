@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Component, ElementRef, ViewChild  , TemplateRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -20,6 +21,8 @@ import { saveAs } from 'file-saver';
 import { HttpClient } from '@angular/common/http';
 import { Status } from 'src/app/models/Status';
 =======
+=======
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TaskService } from 'src/app/Services/task.service';
@@ -27,6 +30,9 @@ import { UserService } from 'src/app/Services/user.service';
 import { Task } from 'src/app/models/task';
 import { User } from 'src/app/models/user';
 
+<<<<<<< HEAD
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
+=======
 >>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 @Component({
   selector: 'app-assignment-list-component',
@@ -34,6 +40,7 @@ import { User } from 'src/app/models/user';
   styleUrls: ['./assignment-list-component.component.css']
 })
 export class AssignmentListComponentComponent {
+<<<<<<< HEAD
 <<<<<<< HEAD
   p: number = 1;
   itemsPerPage:number=8;
@@ -255,6 +262,8 @@ openPDF(pdfData: string, fileName: string ): void {
 
 
 =======
+=======
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 
 
   affectationRequests: any[] = [];
@@ -293,6 +302,9 @@ ngOnInit(): void {
     }
   );
 }
+<<<<<<< HEAD
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
+=======
 >>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 
 
@@ -302,7 +314,11 @@ ngOnInit(): void {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*acceptRequest(requestId: number): void {
+=======
+acceptRequest(requestId: number): void {
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 =======
 acceptRequest(requestId: number): void {
 >>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
@@ -314,6 +330,7 @@ acceptRequest(requestId: number): void {
             console.error('Erreur lors de l\'acceptation de la demande d\'affectation', error);
         }
     );
+<<<<<<< HEAD
 <<<<<<< HEAD
 }*/
 getFiles(): void {
@@ -359,6 +376,10 @@ downloadFile(idParticipantRequest: number): void {
 }
 
 >>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
+=======
+}
+
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 rejectRequest(requestId: number): void {
     this.taskService.rejectAffectationRequest(requestId).subscribe(
         () => {
@@ -370,6 +391,7 @@ rejectRequest(requestId: number): void {
     );
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 PrintInvoice(invoiceNo: string, filename: string, contentType: string, userName: string, email: string, typeTask: TypeTask ) {
   this.participantRequestService.GenerateInvoicePDF(invoiceNo, filename, contentType, userName, email,typeTask  ).subscribe(res => {
@@ -509,6 +531,11 @@ SendEmailWithStat(idParticipantRequest: number, email: string, status: Status) {
 
 
 }
+=======
+ 
+}
+
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 =======
  
 }

@@ -5,7 +5,10 @@ import { Task } from '../models/task';
 import { Role } from '../models/role';
 import { FormGroup } from '@angular/forms';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { TypeTask } from '../models/typeTask';
+=======
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 =======
 >>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 @Injectable({
@@ -23,8 +26,12 @@ export class TaskService {
     return this.http.post<Task>(`${this.baseUrl}/addTask`, task);
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
   
   
+=======
+ 
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 =======
  
 >>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
@@ -45,19 +52,26 @@ export class TaskService {
     return this.http.delete<void>(`${this.baseUrl}/removeTask/${id}`);
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
   
 =======
+=======
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
   affecterTaskATask(idUser: number, idTask: number): Observable<Task[]> {
     const body = {}; // Vous pouvez remplir le corps avec des données si nécessaire
   
     return this.http.post<Task[]>(`${this.baseUrl}/affecterTaskATask/${idUser}/${idTask}`, body);
   }
+<<<<<<< HEAD
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
+=======
 >>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
   sendEmail(emailRequest: any): Observable<string> {
     const url = `${this.baseUrl}/email`;
     return this.http.post<string>(url, emailRequest);
   } 
   getAffectationRequests(userForm: FormGroup): Observable<any> {
+<<<<<<< HEAD
 <<<<<<< HEAD
     // Utilisez userForm.value pour accéder aux valeurs du formulaire
     return this.http.get(`${this.baseUrl}/affectation-requests`, { params: userForm.value });
@@ -75,22 +89,30 @@ assignTaskToOrganizer(idUser: number, idTask: number): Observable<any> {
   return this.http.post<any>(`${this.baseUrl}/affecterTaskAUser/${idUser}/${idTask}`, {});
 }*/
 =======
+=======
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
     // Utilisez UserForm.value pour accéder aux valeurs du formulaire
     return this.http.get(`${this.baseUrl}/affectation-requests`, { params: userForm.value });
   }
 // task.service.ts
 
 
+<<<<<<< HEAD
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
+=======
 >>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 acceptAffectationRequest(requestId: number): Observable<any> {
   return this.http.post(`${this.baseUrl}/accept/${requestId}`, {});
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 getTaskStatisticsByTypeTask(): Observable<Map<TypeTask, number>> {
   return this.http.get<Map<TypeTask, number>>(this.baseUrl+ `/statistics`);
 }
 
+=======
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 =======
 >>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 rejectAffectationRequest(requestId: number): Observable<any> {

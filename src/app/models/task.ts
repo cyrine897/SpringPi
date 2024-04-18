@@ -5,6 +5,10 @@ export interface Task {
     name: string;
     description: string;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 =======
    
 >>>>>>> c91502e1192261371ec684b84cb4396acf0c5865

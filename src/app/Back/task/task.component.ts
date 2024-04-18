@@ -7,7 +7,10 @@ import { Router } from '@angular/router';
 import { TypeTask } from 'src/app/models/typeTask';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Chart } from 'chart.js';
+=======
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 =======
 >>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 @Component({
@@ -20,8 +23,11 @@ export class TaskComponent implements OnInit {
   listTask: Task[] = [];
   task: Task;
 <<<<<<< HEAD
+<<<<<<< HEAD
   dogBarChart: any; // Déclarer la variable dogBarChart ici
 
+=======
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 =======
 >>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
   form: boolean;
@@ -41,8 +47,11 @@ export class TaskComponent implements OnInit {
 
   ngOnInit(): void {
 <<<<<<< HEAD
+<<<<<<< HEAD
     this.RenderDogBar();
     this.RenderChart();
+=======
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 =======
 >>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
     this.getTasks();
@@ -94,6 +103,7 @@ export class TaskComponent implements OnInit {
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   RenderChart() {
     // Appeler la méthode du service pour récupérer les données des tâches
     this.taskService.getTaskStatisticsByTypeTask().subscribe(data => {
@@ -133,6 +143,8 @@ export class TaskComponent implements OnInit {
 
 =======
 >>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
+=======
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';
@@ -162,6 +174,7 @@ export class TaskComponent implements OnInit {
   showBooth(idTask: number): void {
     this.router.navigate(['booth/' + idTask]);
   }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
   RenderDogBar() {
@@ -217,6 +230,8 @@ export class TaskComponent implements OnInit {
   
   
 
+=======
+>>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 =======
 >>>>>>> c91502e1192261371ec684b84cb4396acf0c5865
 }
